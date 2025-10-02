@@ -105,6 +105,9 @@
         },
         {
           "@id": "#hasExampleCarWash"
+        },
+        {
+          "@id": "#hasExampleInternetPurchase"
         }
       ],
       "hasPart": [
@@ -176,6 +179,17 @@
       },
       "hasArtifact": {
         "@id": "#CarWashExample"
+      }
+    },
+    {
+      "@id": "#hasExampleInternetPurchase",
+      "@type": "ResourceDescriptor",
+      "name": "Example: Internet Purchase",
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/example"
+      },
+      "hasArtifact": {
+        "@id": "#InternetPurchaseExample"
       }
     },
     {
@@ -958,17 +972,6 @@
           "@id": "#DeliverTV"
         }
       ]
-    },
-    {
-      "@id": "#hasExampleInternetPurchase",
-      "@type": "ResourceDescriptor",
-      "name": "Example: Internet Purchase",
-      "hasRole": {
-        "@id": "http://www.w3.org/ns/dx/prof/role/example"
-      },
-      "hasArtifact": {
-        "@id": "#InternetPurchaseExample"
-      }
     },
     {
       "@id": "schema:Organization",
@@ -2104,6 +2107,8 @@ table.table {
                         <li><a href="#%23hasSOAVocabulary">Vocabulary: SOA</a></li>
                         
                         <li><a href="#%23hasExampleCarWash">Example: Car wash</a></li>
+                        
+                        <li><a href="#%23hasExampleInternetPurchase">Example: Internet Purchase</a></li>
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
@@ -2336,6 +2341,39 @@ table.table {
             </tr><tr>
             <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
             <td style='text-align:left'><a href="#%23CarWashExample">Car wash business represented using SOA</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasResource<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasResource">[?]</a></th>
+            <td style='text-align:left'><a href="#./">Service-Oriented Architecture Ontology Profile Crate</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> Example: Internet Purchase</h3>
+            
+            
+            
+            
+        <div id="#hasExampleInternetPurchase">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>#hasExampleInternetPurchase</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>Example: Internet Purchase</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>ResourceDescriptor</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasRole<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasRole">[?]</a></th>
+            <td style='text-align:left'><a href="http://www.w3.org/ns/dx/prof/role/example">http://www.w3.org/ns/dx/prof/role/example</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
+            <td style='text-align:left'><a href="#%23InternetPurchaseExample">Internet Purchase example represented using SOA</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasResource<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasResource">[?]</a></th>
             <td style='text-align:left'><a href="#./">Service-Oriented Architecture Ontology Profile Crate</a></td>

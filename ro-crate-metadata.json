@@ -98,6 +98,9 @@
         },
         {
           "@id": "#hasExampleCarWash"
+        },
+        {
+          "@id": "#hasExampleInternetPurchase"
         }
       ],
       "hasPart": [
