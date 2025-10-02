@@ -54,10 +54,15 @@
     {
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.2"
+      },
       "about": {
         "@id": "./"
       },
-      "identifier": "ro-crate-metadata.json"
+      "creator": {
+        "@id": "https://orcid.org/0000-0001-9842-9718"
+      }
     },
     {
       "@id": "./",
@@ -67,7 +72,14 @@
       ],
       "name": "Service-Oriented Architecture Ontology Profile Crate",
       "description": "An RO-Crate profile for applying the SOA ontology",
-      "",
+      "author": [
+        { 
+          "@id": "http://opengroup.org/getinvolved/workgroups/soa"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-9842-9718"
+        }
+      ],
       "isBasedOn": {
         "@id": "https://www.opengroup.org//soa/source-book/ontologyv2/"
       },
@@ -95,6 +107,29 @@
           "@id": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl"
         }
       ]
+    },
+    {
+      "@id": "http://opengroup.org/getinvolved/workgroups/soa",
+      "@type": "Organization",
+      "name": "The Open Group Service-Oriented Architecture (SOA) Work Group",
+      "parentOrganization": {
+        "@id": "https://www.opengroup.org/"
+      },
+      "url": "https://web.archive.org/web/20140625102324/http://opengroup.org/getinvolved/workgroups/soa"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-9842-9718",
+      "@type": "Person",
+      "name": "Stian Soiland-Reyes",
+      "affiliation": {
+        "@id": "https://ror.org/027m9bs27"
+      }
+    },
+    {
+      "@id": "https://ror.org/027m9bs27",
+      "@type": "CollegeOrUniversity",
+      "name": "The University of Manchester",
+      "url": "https://www.manchester.ac.uk/"
     },
     {
       "@id": "https://www.apache.org/licenses/LICENSE-2.0",
@@ -132,7 +167,7 @@
     {
       "@id": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl",
       "@type": "DefinedTermSet",
-      "path": "https://www.opengroup.org/soa/ontology/20140404/soa.owl",
+      "path": "http://www.opengroup.org/soaontology/20140404/soa.owl",
       "hasDefinedTerm": [
         {
           "@id": "soa:Composition"
@@ -280,7 +315,7 @@
         }
       ],
       "license": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p15.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p15.htm"
       },
       "name": "Service-Oriented Architecture Ontology (OWL)",
       "description": "OWL ontology with definitions of SOA Ontology. The terms referenced from hasDefinedTerm represents equivalent Schema.org-like-Schema definitions without using OWL constraints.",
@@ -298,7 +333,7 @@
       "description": "A composition is the result of assembling a collection of things for a particular purpose. Note in particular that we have purposefully distinguished between the act of composing and the resulting composition as a thing, and that it is in the latter sense we are using the concept of composition here.",
       "name": "Composition",
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p5.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p5.htm"
       },
       "termCode": "Composition",
       "rdfs:subClassOf": {
@@ -314,7 +349,7 @@
       "description": "Interacting with something performing a service has effects. These comprise the outcome of that interaction, and are how a service (through the element that performs it) delivers value to its consumers.<p>Note that the Effect class purely represents how results or value is delivered to someone interacting with a service. Any possible internal side-effects are explicitly not covered by the Effect class.",
       "name": "Effect",
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
       },
       "termCode": "Effect",
       "rdfs:subClassOf": {
@@ -330,7 +365,7 @@
       "description": "An element is an opaque entity that is indivisible at a given level of abstraction. The element has a clearly defined boundary.",
       "name": "Element",
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p2.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p2.htm"
       },
       "rdfs:subClassOf": {
         "@id": "schema:Thing"
@@ -345,7 +380,7 @@
       "description": "An event is something that happens, to which an element may choose to respond. Events can be responded to by any element. Similarly, events may be generated (emitted) by any element. Knowing the events generated or responded to by an element makes it easier and more transparent to interact with that element. Note that some events may occur whether generated or responded to by an element or not.<p>Event as a concept is generic and has relevance to the domain of SOA as well as many other domains. For the purposes of this ontology, event is used in its generic sense. <p>From a design perspective events may have more granular parts or may be expressed and made operational through specific syntax or semantics. We have chosen to stay at the concept level and not include such design aspects in the ontology.",
       "name": "SOAEvent",
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p7.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p7.htm"
       },
       "termCode": "Event",
       "rdfs:subClassOf": {
@@ -361,7 +396,7 @@
       "description": "A human actor is a person or an organization. (...) HumanActor is specifically not defined as disjoint with System since an organization in many cases is in fact just a particular kind of system",
       "name": "Human actor",
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p3.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p3.htm"
       },
       "termCode": "HumanActor",
       "rdfs:subClassOf": {
@@ -377,7 +412,7 @@
       "description": "A service interface can enable another element to give information to or receive information from a service (when it uses that service); specifically the types of information given or received.<p>In any concrete interaction through a service interface the information types on that interface are instantiated by information items, yet for the service interface itself it is the types that are important. Note that the constraints datatype property on ServiceInterface, if necessary, can be used to express constraints on allowed values for certain information types.",
       "name": "Information type",
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
       },
       "termCode": "InformationType",
       "rdfs:subClassOf": {
@@ -393,7 +428,7 @@
       "description": "A policy is a statement of direction that a human actor may intend to follow or may intend that another human actor should follow. Knowing the policies that apply to something makes it easier and more transparent to interact with that something.<p>Policy as a concept is generic and has relevance outside the domain of SOA. For the purposes of this SOA ontology it has not been necessary or relevant to restrict the generic nature of the Policy class itself. The relationships between Policy and HumanActor are of course bound by the SOA-specific restrictions that have been applied on the definition of HumanActor.<p>From a design perspective policies may have more granular parts or may be expressed and made operational through specific rules. We have chosen to stay at the concept level and not include such design aspects in the ontology.<p>Policy is distinct from all other concepts in this ontology, hence the Policy class is defined as disjoint with all other defined classes. In particular, Policy is disjoint with ServiceContract. While policies may apply to service contracts – such as security policies on who may change a given service contract – or conversely be referred to by service contracts as part of the terms, conditions, and interaction rules that interacting participants must agree to, service contracts are themselves not policies as they do not describe an intended course of action.",
       "name": "Policy",
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p6.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p6.htm"
       },
       "termCode": "Policy",
       "rdfs:subClassOf": {
@@ -409,7 +444,7 @@
       "description": "Another key SOA concept is the notion of process. A process is a composition whose elements are composed into a sequence or flow of activities and interactions with the objective of carrying out certain work. This definition is consistent with, for instance, the Business Process Modeling Notation (BPMN) 2.0 definition of a process. <p> Elements in process compositions can be things like human actors, tasks, services, other processes, etc. A process always adds logic via the composition pattern; the result is more than the parts",
       "name": "Process",
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p5.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p5.htm"
       },
       "termCode": "Process",
       "rdfs:subClassOf": [
@@ -430,7 +465,7 @@
       "description": "A service is a logical representation of a repeatable activity that has a specified outcome. It is self-contained and is a ‘black box’ to its consumers. In the context of the SOA ontology we consider only SOA-based services.",
       "name": "SOAService",
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
       },
       "termCode": "Service",
       "rdfs:subClassOf": [
@@ -451,7 +486,7 @@
       "description": "A key SOA concept is the notion of service composition, the result of assembling a collection of services in order to perform a new higher-level service. As a service composition is the result of assembling a collection of services, ServiceComposition is naturally a subclass of Composition.<p>A service composition may, and typically will, add logic (or even “code”) via the composition pattern. Note that a service composition is not the new higher-level service itself (due to the System and Service classes being disjoint); rather it performs (as an element) that higher-level service.",
       "name": "Service composition",
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p5.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p5.htm"
       },
       "termCode": "ServiceComposition",
       "rdfs:subClassOf": {
@@ -467,7 +502,7 @@
       "description": "In many cases, specific agreements are needed in order to define how to use a service. This can either be because of a desire to regulate such use or can simply be because the service will not function properly unless interaction with it is done in a certain sequence. A service contract defines the terms, conditions, and interaction rules that interacting participants must agree to (directly or indirectly). A service contract is binding on all participants in the interaction, including the service itself and the element that provides it for the particular interaction in question",
       "name": "Service contract",
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
       },
       "termCode": "ServiceContract",
       "rdfs:subClassOf": {
@@ -483,7 +518,7 @@
       "description": "An important characteristic of services is that they have simple, well-defined interfaces. This makes it easy to interact with them, and enables other elements to use them in a structured manner. A service interface defines the way in which other elements can interact and exchange information with a service.<p>The concept of an interface is in general well understood by practitioners, including the notion that interfaces define the parameters for information passing in and out of them when invoked. What differs from domain to domain is the specific nature of how an interface is invoked and how information is passed back and forth. Service interfaces are typically, but not necessarily, message-based (to support loose-coupling). Furthermore, service interfaces are always defined independently from any service implementing them (to support loose-coupling and service mediation).",
       "name": "Service interface",
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
       },
       "termCode": "ServiceInterface",
       "rdfs:subClassOf": {
@@ -499,7 +534,7 @@
       "description": "A system is an organized collection of other things. Specifically things in a system collection are instances of Element, each such instance being used by the system.",
       "name": "System",
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p2.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p2.htm"
       },
       "termCode": "System",
       "rdfs:subClassOf": {
@@ -515,7 +550,7 @@
       "description": "A task is an atomic action which accomplishes a defined result. Tasks are done by people or organizations, specifically by instances of HumanActor.",
       "name": "Task",
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p3.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p3.htm"
       },
       "termCode": "Task",
       "rdfs:subClassOf": {
@@ -537,7 +572,7 @@
         "@id": "schema:Thing"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p6.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p6.htm"
       },
       "termCode": "appliesTo"
     },
@@ -556,7 +591,7 @@
         "@id": "schema:Text"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p5.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p5.htm"
       },
       "termCode": "compositionPattern",
       "sh:maxCount": 1,
@@ -577,7 +612,7 @@
         "@id": "schema:Text"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
       },
       "termCode": "constraints",
       "sh:maxCount": 1,
@@ -601,7 +636,7 @@
         "@id": "soa:Task"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p3.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p3.htm"
       },
       "termCode": "does"
     },
@@ -620,7 +655,7 @@
         "@id": "soa:HumanActor"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p3.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p3.htm"
       },
       "termCode": "doneBy",
       "sh:maxCount": 1,
@@ -644,7 +679,7 @@
         "@id": "soa:Element"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p7.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p7.htm"
       }
     },
     {
@@ -662,7 +697,7 @@
         "@id": "soa:Event"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p7.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p7.htm"
       }
     },
     {
@@ -683,7 +718,7 @@
         "@id": "soa:ServiceContract"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
       },
       "termCode": "hasContract"
     },
@@ -702,7 +737,7 @@
         "@id": "soa:InformationType"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
       },
       "termCode": "hasInput"
     },
@@ -721,7 +756,7 @@
         "@id": "soa:ServiceInterface"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
       },
       "termCode": "hasInterface",
       "sh:minCount": 1
@@ -741,7 +776,7 @@
         "@id": "soa:InformationType"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
       },
       "termCode": "hasOutput"
     },
@@ -760,7 +795,7 @@
         "@id": "schema:Text"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
       },
       "termCode": "interactionAspect",
       "sh:maxCount": 1,
@@ -784,7 +819,7 @@
         "@id": "soa:HumanActor"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
       },
       "termCode": "involvesParty"
     },
@@ -803,7 +838,7 @@
         "@id": "soa:Service"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
       },
       "termCode": "isContractFor",
       "sh:minCount": 1
@@ -826,7 +861,7 @@
         "@id": "soa:ServiceInterface"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
       },
       "termCode": "isInputAt"
     },
@@ -848,7 +883,7 @@
         "@id": "soa:Service"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
       },
       "termCode": "isInterfaceOf"
     },
@@ -870,7 +905,7 @@
         "@id": "soa:ServiceInterface"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
       },
       "termCode": "isOutputAt"
     },
@@ -888,7 +923,7 @@
         "@id": "soa:ServiceContract"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
       }
     },
     {
@@ -909,7 +944,7 @@
         "@id": "soa:HumanActor"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p6.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p6.htm"
       },
       "termCode": "isSetBy"
     },
@@ -931,7 +966,7 @@
         "@id": "soa:ServiceContract"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
       },
       "termCode": "isSpecifiedBy",
       "sh:minCount": 1
@@ -954,7 +989,7 @@
         "@id": "soa:Policy"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p6.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p6.htm"
       },
       "termCode": "isSubjectTo"
     },
@@ -973,7 +1008,7 @@
         "@id": "schema:Text"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
       },
       "termCode": "legalAspect",
       "sh:maxCount": 1,
@@ -994,7 +1029,7 @@
         "@id": "soa:Element"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p2.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p2.htm"
       },
       "termCode": "orchestratedBy",
       "sh:maxCount": 1,
@@ -1018,7 +1053,7 @@
         "@id": "soa:Composition"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p2.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p2.htm"
       },
       "termCode": "orchestrates",
       "sh:maxCount": 1,
@@ -1042,7 +1077,7 @@
         "@id": "soa:Element"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
       },
       "termCode": "performedBy"
     },
@@ -1061,7 +1096,7 @@
         "@id": "soa:Service"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
       },
       "termCode": "performs"
     },
@@ -1083,7 +1118,7 @@
         "@id": "soa:Element"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p2.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p2.htm"
       },
       "termCode": "representedBy"
     },
@@ -1102,7 +1137,7 @@
         "@id": "soa:Element"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p2.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p2.htm"
       },
       "termCode": "represents"
     },
@@ -1124,7 +1159,7 @@
         "@id": "soa:Element"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p7.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p7.htm"
       },
       "termCode": "respondedToBy"
     },
@@ -1143,7 +1178,7 @@
         "@id": "soa:Event"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p7.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p7.htm"
       },
       "termCode": "respondsTo"
     },
@@ -1162,7 +1197,7 @@
         "@id": "soa:Policy"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p6.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p6.htm"
       },
       "termCode": "setsPolicy"
     },
@@ -1181,7 +1216,7 @@
         "@id": "soa:Effect"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
       },
       "termCode": "specifies",
       "sh:minCount": 1
@@ -1204,7 +1239,7 @@
         "@id": "soa:Element"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p2.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p2.htm"
       },
       "termCode": "usedBy"
     },
@@ -1223,7 +1258,7 @@
         "@id": "soa:Element"
       },
       "subjectOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p2.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p2.htm"
       },
       "termCode": "uses"
     },
@@ -1236,12 +1271,12 @@
       "@id": "https://www.opengroup.org//soa/source-book/ontologyv2/",
       "@type": "Chapter",
       "isPartOf": {
-        "@id": "https://www.opengroup.org/soa/source-book/intro/"
+        "@id": "http://www.opengroup.org/soasource-book/intro/"
       },
       "name": "Service-Oriented Architecture Ontology Version 2.0"
     },
     {
-      "@id": "https://www.opengroup.org/soa/source-book/intro/",
+      "@id": "http://www.opengroup.org/soasource-book/intro/",
       "@type": "Book",
       "copyrightHolder": {
         "@id": "https://www.opengroup.org/"
@@ -1249,7 +1284,7 @@
       "datePublished": "2014-04",
       "isbn": "978-1-93-721850-8",
       "license": {
-        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p15.htm"
+        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p15.htm"
       },
       "name": "SOA Source Book",
       "publisher": {
@@ -1258,7 +1293,7 @@
       "url": "https://www.opengroup.org/what-we-do-technology-standards/soa/source-book/intro"
     },
     {
-      "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p15.htm",
+      "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p15.htm",
       "@type": "Chapter",
       "isPartOf": {
         "@id": "https://www.opengroup.org//soa/source-book/ontologyv2/"
@@ -1267,7 +1302,7 @@
       "text": "Copyright<p>      Copyright © 2010-2014, The Open Group<p>The Open Group hereby authorizes you to use this document for any purpose, PROVIDED THAT any copy of this document, or any part thereof, which you make shall retain all copyright and other proprietary notices contained herein.<p>This document may contain other proprietary notices and copyright information.<p>Nothing contained herein shall be construed as conferring by implication, estoppel, or otherwise any license or right under any patent or trademark of The Open Group or any third party. Except as expressly provided above, nothing contained herein shall be construed as conferring any license or right under any copyright of The Open Group.<p>Note that any product, process, or technology in this document may be the subject of other intellectual property rights reserved by The Open Group, and may not be licensed hereunder.<p>This document is provided \"AS IS\" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. Some jurisdictions do not allow the exclusion of implied warranties, so the above exclusion may not apply to you.<p>Any publication of The Open Group may include technical inaccuracies or typographical errors. Changes may be periodically made to these publications; these changes will be incorporated in new editions of these publications. The Open Group may make improvements and/or changes in the products and/or the programs described in these publications at any time without notice.<p>Should any viewer of this document respond with information including feedback data, such as questions, comments, suggestions, or the like regarding the content of this document, such information shall be deemed to be non-confidential and The Open Group shall have no obligation of any kind with respect to such information and shall be free to reproduce, use, disclose, and distribute the information to others without limitation. Further, The Open Group shall be free to use any ideas, concepts, know-how, or techniques contained in such information for any purpose whatsoever including but not limited to developing, manufacturing, and marketing products incorporating such information.<p>If you did not obtain this copy through The Open Group, it may not be the latest version. For your convenience, the latest version of this publication may be downloaded at www.opengroup.org/bookstore.<p><p>Open Group Standard<p>Service-Oriented Architecture Ontology, Version 2.0<p>ISBN:  1-937218-50-8<p>Document Number:  C144<p><p>Published by The Open Group, April 2014.<p><p>Comments relating to the material contained in this document may be submitted to:<p>The Open Group, Apex Plaza, Forbury Road, Reading, Berkshire, RG1 1AX, United Kingdom<p>or by electronic mail to:<p>ogspecs@opengroup.org\n      Trademarks<p>ArchiMate®, DirecNet®, Jericho Forum®, Making Standards Work®, OpenPegasus®, The Open Group®, TOGAF®, and UNIX® are registered trademarks and Boundaryless Information Flow™, Build with Integrity Buy with Confidence™, Dependability Through Assuredness™, FACE™, Open Platform 3.0™, Open Trusted Technology Provider™, and The Open Group Certification Mark™ are trademarks of The Open Group.<p>All other brands, company, and product names are used for identification purposes only and may be trademarks that are the sole property of their respective owners."
     },
     {
-      "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p2.htm",
+      "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p2.htm",
       "@type": "Chapter",
       "isPartOf": {
         "@id": "https://www.opengroup.org//soa/source-book/ontologyv2/"
@@ -1275,7 +1310,7 @@
       "name": "Service-Oriented Architecture Ontology Version 2.0 – System and Element"
     },
     {
-      "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p3.htm",
+      "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p3.htm",
       "@type": "Chapter",
       "isPartOf": {
         "@id": "https://www.opengroup.org//soa/source-book/ontologyv2/"
@@ -1283,7 +1318,7 @@
       "name": "Service-Oriented Architecture Ontology Version 2.0 – HumanActor and Task"
     },
     {
-      "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm",
+      "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm",
       "@type": "Chapter",
       "isPartOf": {
         "@id": "https://www.opengroup.org//soa/source-book/ontologyv2/"
@@ -1291,7 +1326,7 @@
       "name": "Service-Oriented Architecture Ontology Version 2.0 – Service, ServiceContract, and ServiceInterface"
     },
     {
-      "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p5.htm",
+      "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p5.htm",
       "@type": "Chapter",
       "isPartOf": {
         "@id": "https://www.opengroup.org//soa/source-book/ontologyv2/"
@@ -1299,7 +1334,7 @@
       "name": "Service-Oriented Architecture Ontology Version 2.0 – Composition and its Subclasses"
     },
     {
-      "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p6.htm",
+      "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p6.htm",
       "@type": "Chapter",
       "isPartOf": {
         "@id": "https://www.opengroup.org//soa/source-book/ontologyv2/"
@@ -1307,7 +1342,7 @@
       "name": "Service-Oriented Architecture Ontology Version 2.0 – Policy"
     },
     {
-      "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p7.htm",
+      "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p7.htm",
       "@type": "Chapter",
       "isPartOf": {
         "@id": "https://www.opengroup.org//soa/source-book/ontologyv2/"
