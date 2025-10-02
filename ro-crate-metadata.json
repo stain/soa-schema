@@ -5,7 +5,8 @@
       "subPropertyOf": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
       "owl": "http://www.w3.org/2002/07/owl#",
       "xsd": "http://www.w3.org/2001/XMLSchema#",
-      "soa": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#"
+      "soa": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#",
+      "sh": "http://www.w3.org/ns/shacl#"
     }
   ],
   "@graph": [
@@ -77,94 +78,8 @@
         "@id": "./"
       }
     },
-    {
-      "@id": "_:b0",
-      "@type": "owl:Restriction",
-      "owl:minCardinality": {
-        "@type": "xsd:int",
-        "@value": "1"
-      },
-      "owl:onProperty": {
-        "@id": "soa:legalAspect"
-      }
-    },
-    {
-      "@id": "_:b1",
-      "@type": "owl:Restriction",
-      "owl:maxCardinality": {
-        "@type": "xsd:int",
-        "@value": "1"
-      },
-      "owl:onProperty": {
-        "@id": "soa:legalAspect"
-      }
-    },
-    {
-      "@id": "_:b10",
-      "@type": "owl:Restriction",
-      "owl:maxCardinality": {
-        "@type": "xsd:int",
-        "@value": "1"
-      },
-      "owl:onProperty": {
-        "@id": "soa:interactionAspect"
-      }
-    },
-    {
-      "@id": "_:b11",
-      "@type": "owl:Restriction",
-      "owl:minCardinality": {
-        "@type": "xsd:int",
-        "@value": "1"
-      },
-      "owl:onProperty": {
-        "@id": "soa:interactionAspect"
-      }
-    },
-    {
-      "@id": "_:b12",
-      "@type": "owl:Restriction",
-      "owl:minCardinality": {
-        "@type": "xsd:int",
-        "@value": "1"
-      },
-      "owl:onProperty": {
-        "@id": "soa:isContractFor"
-      }
-    },
-    {
-      "@id": "_:b13",
-      "@type": "owl:Restriction",
-      "owl:minCardinality": {
-        "@type": "xsd:int",
-        "@value": "1"
-      },
-      "owl:onProperty": {
-        "@id": "soa:specifies"
-      }
-    },
-    {
-      "@id": "_:b14",
-      "@type": "owl:Restriction",
-      "owl:maxCardinality": {
-        "@type": "xsd:int",
-        "@value": "1"
-      },
-      "owl:onProperty": {
-        "@id": "soa:constraints"
-      }
-    },
-    {
-      "@id": "_:b15",
-      "@type": "owl:Restriction",
-      "owl:minCardinality": {
-        "@type": "xsd:int",
-        "@value": "1"
-      },
-      "owl:onProperty": {
-        "@id": "soa:constraints"
-      }
-    },
+
+
     {
       "@id": "_:b16",
       "@type": "owl:Restriction",
@@ -174,50 +89,6 @@
       },
       "owl:onProperty": {
         "@id": "soa:isSpecifiedBy"
-      }
-    },
-    {
-      "@id": "_:b17",
-      "@type": "owl:Restriction",
-      "owl:maxCardinality": {
-        "@type": "xsd:int",
-        "@value": "1"
-      },
-      "owl:onProperty": {
-        "@id": "soa:compositionPattern"
-      }
-    },
-    {
-      "@id": "_:b2",
-      "@type": "owl:Restriction",
-      "owl:minCardinality": {
-        "@type": "xsd:int",
-        "@value": "1"
-      },
-      "owl:onProperty": {
-        "@id": "soa:compositionPattern"
-      }
-    },
-    {
-      "@id": "_:b3",
-      "@type": "owl:Restriction",
-      "owl:maxCardinality": {
-        "@type": "xsd:int",
-        "@value": "1"
-      },
-      "owl:onProperty": {
-        "@id": "soa:orchestratedBy"
-      }
-    },
-    {
-      "@id": "_:b4",
-      "@type": "owl:Restriction",
-      "owl:minCardinality": {
-        "@type": "xsd:int",
-        "@value": "0"
-      },
-      "owl:onProperty": {
-        "@id": "soa:orchestratedBy"
       }
     },
     {
@@ -240,17 +111,6 @@
       },
       "owl:onProperty": {
         "@id": "soa:doneBy"
-      }
-    },
-    {
-      "@id": "_:b7",
-      "@type": "owl:Restriction",
-      "owl:minCardinality": {
-        "@type": "xsd:int",
-        "@value": "1"
-      },
-      "owl:onProperty": {
-        "@id": "soa:hasInterface"
       }
     },
     {
@@ -315,6 +175,18 @@
       "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm",
       "@type": "Chapter",
       "name": "Service-Oriented Architecture Ontology Version 2.0 – Service, ServiceContract, and ServiceInterface",
+      "isPartOf": {"@id": "https://www.opengroup.org//soa/source-book/ontologyv2/"}
+    },
+    {
+      "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p5.htm",
+      "@type": "Chapter",
+      "name": "Service-Oriented Architecture Ontology Version 2.0 – Composition and its Subclasses",
+      "isPartOf": {"@id": "https://www.opengroup.org//soa/source-book/ontologyv2/"}
+    },
+    {
+      "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p6.htm",
+      "@type": "Chapter",
+      "name": "Service-Oriented Architecture Ontology Version 2.0 – Policy",
       "isPartOf": {"@id": "https://www.opengroup.org//soa/source-book/ontologyv2/"}
     },
     {
@@ -388,21 +260,13 @@
     {
       "@id": "soa:Composition",
       "@type": ["rdfs:Class", "DefinedTerm"],
+      "name": "Composition",
+      "termCode": "Composition",
+      "description": "A composition is the result of assembling a collection of things for a particular purpose. Note in particular that we have purposefully distinguished between the act of composing and the resulting composition as a thing, and that it is in the latter sense we are using the concept of composition here.",
+      "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p5.htm"},
       "rdfs:subClassOf": [
         {
           "@id": "soa:System"
-        },
-        {
-          "@id": "_:b17"
-        },
-        {
-          "@id": "_:b2"
-        },
-        {
-          "@id": "_:b3"
-        },
-        {
-          "@id": "_:b4"
         }
       ]
     },
@@ -446,6 +310,9 @@
     {
       "@id": "soa:InformationType",
       "@type": ["rdfs:Class", "DefinedTerm"],
+      "name": "Information type",
+      "termCode": "InformationType",
+      "description": "A service interface can enable another element to give information to or receive information from a service (when it uses that service); specifically the types of information given or received.<p>In any concrete interaction through a service interface the information types on that interface are instantiated by information items, yet for the service interface itself it is the types that are important. Note that the constraints datatype property on ServiceInterface, if necessary, can be used to express constraints on allowed values for certain information types.",
       "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"}
     },
     {
@@ -455,6 +322,10 @@
     {
       "@id": "soa:Process",
       "@type": ["rdfs:Class", "DefinedTerm"],
+      "name": "Process",
+      "termCode": "Process",
+      "description": "Another key SOA concept is the notion of process. A process is a composition whose elements are composed into a sequence or flow of activities and interactions with the objective of carrying out certain work. This definition is consistent with, for instance, the Business Process Modeling Notation (BPMN) 2.0 definition of a process. <p> Elements in process compositions can be things like human actors, tasks, services, other processes, etc. A process always adds logic via the composition pattern; the result is more than the parts",
+      "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p5.htm"},      
       "rdfs:subClassOf": {
         "@id": "soa:Composition"
       }
@@ -480,6 +351,10 @@
     {
       "@id": "soa:ServiceComposition",
       "@type": ["rdfs:Class", "DefinedTerm"],
+      "name": "Service composition",
+      "termCode": "ServiceComposition",
+      "description": "A key SOA concept is the notion of service composition, the result of assembling a collection of services in order to perform a new higher-level service.<p>As a service composition is the result of assembling a collection of services, ServiceComposition is naturally a subclass of Composition.<p>A service composition may, and typically will, add logic (or even “code”) via the composition pattern. Note that a service composition is not the new higher-level service itself (due to the System and Service classes being disjoint); rather it performs (as an element) that higher-level service.",
+      "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p5.htm"},
       "rdfs:subClassOf": {
         "@id": "soa:Composition"
       }
@@ -488,6 +363,10 @@
       "@id": "soa:ServiceContract",
       "@type": ["rdfs:Class", "DefinedTerm"],
       "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"},
+      "name": "Service contract",
+      "termCode": "ServiceContract",
+      "description": "In many cases, specific agreements are needed in order to define how to use a service. This can either be because of a desire to regulate such use or can simply be because the service will not function properly unless interaction with it is done in a certain sequence. A service contract defines the terms, conditions, and interaction rules that interacting participants must agree to (directly or indirectly). A service contract is binding on all participants in the interaction, including the service itself and the element that provides it for the particular interaction in question",
+      
       "rdfs:subClassOf": [
         {
           "@id": "_:b0"
@@ -512,15 +391,10 @@
     {
       "@id": "soa:ServiceInterface",
       "@type": ["rdfs:Class", "DefinedTerm"],
-      "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"},
-      "rdfs:subClassOf": [
-        {
-          "@id": "_:b14"
-        },
-        {
-          "@id": "_:b15"
-        }
-      ]
+      "name": "Service interface",
+      "termCode": "ServiceInterface",
+      "description": "An important characteristic of services is that they have simple, well-defined interfaces. This makes it easy to interact with them, and enables other elements to use them in a structured manner. A service interface defines the way in which other elements can interact and exchange information with a service.<p>The concept of an interface is in general well understood by practitioners, including the notion that interfaces define the parameters for information passing in and out of them when invoked. What differs from domain to domain is the specific nature of how an interface is invoked and how information is passed back and forth. Service interfaces are typically, but not necessarily, message-based (to support loose-coupling). Furthermore, service interfaces are always defined independently from any service implementing them (to support loose-coupling and service mediation).",
+      "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"}
     },
     {
       "@id": "soa:System",
@@ -563,16 +437,33 @@
     {
       "@id": "soa:compositionPattern",
       "@type": ["rdf:Property", "DefinedTerm", "owL:DatatypeProperty"],
+      "name": "composition pattern",
+      "termCode": "compositionPattern",
+      "description": "As discussed above, any composition must have associated with it a specific composition pattern, that pattern describing the way in which a collection of elements is assembled to a result. The concept of a composition pattern is captured by the compositionPattern datatype property. Note that even though certain kinds of composition patterns are of special interest within SOA (see below), the compositionPattern datatype property may take any value as long as that value describes how to assemble the elements used by the composition with which it is associated.",
+      "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p5.htm"},
+      "sh:minCount": 1,
+      "sh:maxCount": 1,
       "domainIncludes": {
         "@id": "soa:Composition"
+      },
+      "rangeIncludes": {
+        "@id": "http://schema.org/Text"
       }
     },
     {
       "@id": "soa:constraints",
       "@type": ["rdf:Property", "DefinedTerm", "owL:DatatypeProperty"],
+      "name": "constraints",
+      "termCode": "constraints",
+      "description": "The constraints datatype property on ServiceInterface captures the notion that there can be constraints on the allowed interaction such as only certain value ranges allowed on given parameters. Depending on the nature of the service and the service interface in question, these constraints may be defined either formally or informally (the informal case being relevant at a minimum for certain types of real-world services).",
       "domainIncludes": {
         "@id": "soa:ServiceInterface"
-      }
+      },
+      "rangeIncludes": {
+        "@id": "http://schema.org/Text"
+      },
+      "sh:minCount": 1,
+      "sh:maxCount": 1
     },
     {
       "@id": "soa:does",
@@ -643,6 +534,9 @@
     {
       "@id": "soa:hasInput",
       "@type": ["rdf:Property", "DefinedTerm", "owL:ObjectProperty"],
+      "name": "has input",
+      "termCode": "hasInput",
+      "description": "The hasInput property, and its inverse isInputAt, capture the abstract notion of a particular type of information being given when interacting with a service through a service interface.<p>Note that there is a many-to-many relationship between service interfaces and input information types. A given information type may be input at many service interfaces or none at all. Similarly, a given service interface may have many information types as input or none at all. It is important to realize that some services may have only inputs (triggering an asynchronous action without a defined response) and other services may have only outputs (elements performing these services execute independently yet may provide output that is used by other elements).",
       "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"},
       "domainIncludes": {
         "@id": "soa:ServiceInterface"
@@ -654,7 +548,11 @@
     {
       "@id": "soa:hasInterface",
       "@type": ["rdf:Property", "DefinedTerm", "owL:ObjectProperty"],
+      "name": "has interface",
+      "termCode": "hasInterface",
+      "description": "The hasInterface property, and its inverse isInterfaceOf, capture the abstract notion of a service having a particular service interface. In one direction, any service must have at least one service interface; anything else would be contrary to the definition of a service as a representation of a repeatable activity that has a specified outcome and is a ‘black box’ to its consumers. In the other direction, there can be service interfaces that are not yet interfaces of any defined services. Also, the same service interface can be an interface of multiple services. The latter does not mean that these services are the same, nor even that they have the same effect; it only means that it is possible to interact with all these services in the manner defined by the service interface in question.",
       "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"},
+      "sh:minCount": 1,
       "domainIncludes": {
         "@id": "soa:Service"
       },
@@ -665,6 +563,9 @@
     {
       "@id": "soa:hasOutput",
       "@type": ["rdf:Property", "DefinedTerm", "owL:ObjectProperty"],
+      "name": "has output",
+      "termCode": "hasOutput",
+      "description": "The hasOutput property, and its inverse isOutputAt, capture the abstract notion of a particular type of information being received when interacting with a service through a service interface.<p>Note that there is a many-to-many relationship between service interfaces and output information types. A given information type may be output at many service interfaces or none at all. Similarly, a given service interface may have many information types as output or none at all. It is important to realize that some services may have only inputs (triggering an asynchronous action without a defined response) and other services may have only outputs (elements performing these services execute independently yet may provide output that is used by other elements).",
       "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"},
       "domainIncludes": {
         "@id": "soa:ServiceInterface"
@@ -676,8 +577,17 @@
     {
       "@id": "soa:interactionAspect",
       "@type": ["rdf:Property", "DefinedTerm", "owL:DatatypeProperty"],
+      "name": "interaction aspect",
+      "termCode": "interactionAspect",
+      "description": "Service contracts explicitly regulate both the interaction aspects (see the hasContract and isContractFor properties) and the legal agreement aspects (see the involvedParty and isPartyTo properties) of using a service. The two types of aspects are formally captured by defining the interactionAspect and legalAspect datatype properties on the ServiceContract class.",
+      "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"},
+      "sh:minCount": 1,
+      "sh:maxCount": 1,
       "domainIncludes": {
         "@id": "soa:ServiceContract"
+      },
+      "rangeIncludes": {
+        "@id": "http://schema.org/Text"
       }
     },
     {
@@ -692,6 +602,7 @@
       "@id": "soa:isContractFor",
       "@type": ["rdf:Property", "DefinedTerm", "owL:ObjectProperty"],
       "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"},
+      "sh:minCount": 1,
       "domainIncludes": {
         "@id": "soa:ServiceContract"
       },
@@ -702,7 +613,16 @@
     {
       "@id": "soa:isInputAt",
       "@type": ["rdf:Property", "DefinedTerm", "owL:ObjectProperty"],
+      "name": "is input at",
+      "termCode": "isInputAt",
+      "description": "Inverse of property soa:hasInput",
       "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"},
+      "domainIncludes": {
+        "@id": "soa:InformationType"
+      },
+      "rangeIncludes": {
+        "@id": "soa:ServiceInterface"
+      },
       "inverseOf": {
         "@id": "soa:hasInput"
       }
@@ -710,7 +630,16 @@
     {
       "@id": "soa:isInterfaceOf",
       "@type": ["rdf:Property", "DefinedTerm", "owL:ObjectProperty"],
+      "name": "is interface of",
+      "termCode": "isInterfaceOf",
+      "description": "Inverse of property soa:hasInterface",
       "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"},
+      "domainIncludes": {
+        "@id": "soa:ServiceInterface"
+      },
+      "rangeIncludes": {
+        "@id": "soa:Service"
+      },      
       "inverseOf": {
         "@id": "soa:hasInterface"
       }
@@ -718,7 +647,16 @@
     {
       "@id": "soa:isOutputAt",
       "@type": ["rdf:Property", "DefinedTerm", "owL:ObjectProperty"],
+      "name": "is output at",
+      "termCode": "isOutputAt",
+      "description": "Inverse of property soa:hasOutput",
       "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"},
+      "domainIncludes": {
+        "@id": "soa:InformationType"
+      },
+      "rangeIncludes": {
+        "@id": "soa:ServiceInterface"
+      },
       "inverseOf": {
         "@id": "soa:hasOutput"
       }
@@ -744,10 +682,20 @@
     {
       "@id": "soa:isSpecifiedBy",
       "@type": ["rdf:Property", "DefinedTerm", "owL:ObjectProperty"],
+      "name": "is specified by",
+      "termCode": "isSpecifiedBy",
+      "description": "Inverse of soa:specifies",
       "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"},
       "inverseOf": {
         "@id": "soa:specifies"
-      }
+      },
+      "sh:minCount": 1,
+      "domainIncludes": {
+        "@id": "soa:Effect"
+      },
+      "rangeIncludes": {
+        "@id": "soa:ServiceContract"
+      }      
     },
     {
       "@id": "soa:isSubjectTo",
@@ -759,13 +707,26 @@
     {
       "@id": "soa:legalAspect",
       "@type": ["rdf:Property", "DefinedTerm", "owL:DatatypeProperty"],
+      "description": "Service contracts explicitly regulate both the interaction aspects (see the hasContract and isContractFor properties) and the legal agreement aspects (see the involvedParty and isPartyTo properties) of using a service. The two types of aspects are formally captured by defining the interactionAspect and legalAspect datatype properties on the ServiceContract class. Note that the second of these attributes, the legal agreement aspects, includes concepts such as Service-Level Agreements (SLAs).",
+      "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"},
+      "sh:minCount": 1,
+      "sh:maxCount": 1,
       "domainIncludes": {
         "@id": "soa:ServiceContract"
+      },
+      "rangeIncludes": {
+        "@id": "http://schema.org/Text"
       }
     },
     {
       "@id": "soa:orchestratedBy",
       "@type": ["rdf:Property", "DefinedTerm", "owL:ObjectProperty"],
+      "name": "orchestrated by",
+      "termCode": "orchestratedBy",
+      "description": "An orchestration has one particular element that oversees and directs the other elements used by the composition. This type of relationship is important enough that we have chosen to capture the abstract notion in the orchestrates property and its inverse orchestratedBy.<p>In one direction, a composition has at most one element that orchestrates it, and the cardinality can only be one (1) if in fact the composition pattern of that composition is an orchestration. In the other direction, an element can orchestrate at most one composition which then must have an orchestration as its composition pattern.<p>Note that in practical applications of the ontology, even though Service is a subclass of Element, a service (as a purely logical representation) is not expected to orchestrate a composition.",
+      "sh:minCount": 0,
+      "sh:maxCount": 1,
+      "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p2.htm"},
       "domainIncludes": {
         "@id": "soa:Composition"
       },
@@ -776,6 +737,19 @@
     {
       "@id": "soa:orchestrates",
       "@type": ["rdf:Property", "DefinedTerm", "owL:ObjectProperty"],
+      "name": "orchestrates",
+      "termCode": "orchestrates",
+      "description": "Inverse of property soa:orchestratedBy",
+      "sh:minCount": 0,
+      "sh:maxCount": 1,
+      "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p2.htm"},
+
+      "domainIncludes": {
+        "@id": "soa:Element"
+      },
+      "rangeIncludes": {
+        "@id": "soa:Composition"
+      },      
       "inverseOf": {
         "@id": "soa:orchestratedBy"
       }
@@ -878,7 +852,11 @@
     {
       "@id": "soa:specifies",
       "@type": ["rdf:Property", "DefinedTerm", "owL:ObjectProperty"],
+      "name": "specifies",
+      "termCode": "specifies",
+      "description": "While a service intrinsically has an effect every time someone interacts with it, in order to trust the effect to be something in particular, the effect needs to be specified as part of a service contract. The specifies property, and its inverse isSpecifiedBy, capture the abstract notion of a service contract specifying a particular effect as part of the agreement for using a service. Note that the specified effect can apply to both the interactionAspect datatype property (simply specifying what will happen when interacting with the service according to the service contract) and the legalAspect datatype property (specifying a contractually promised effect).<p>Anyone wanting a guaranteed effect of the interaction with a given service must ensure that the desired effect is specified in a service contract applying to that interaction. By definition, any service contract must specify at least one effect. In the other direction, an effect must be an effect of at least one service contract; this represents that fact that we have chosen only to formalize those effects that are specified by service contracts (and not all intrinsic effects of all services).",
       "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"},
+      "sh:minCount": 1,
       "domainIncludes": {
         "@id": "soa:ServiceContract"
       },
