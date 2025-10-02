@@ -9,11 +9,52 @@
   "@context": [
     "https://w3id.org/ro/crate/1.1/context",
     {
-      "subPropertyOf": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
-      "owl": "http://www.w3.org/2002/07/owl#",
-      "xsd": "http://www.w3.org/2001/XMLSchema#",
       "soa": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#",
-      "sh": "http://www.w3.org/ns/shacl#"
+      "sh": "http://www.w3.org/ns/shacl#",
+      "Composition": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Composition",
+      "Effect": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Effect",
+      "SOAEvent": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Event",
+      "HumanActor": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#HumanActor",
+      "InformationType": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#InformationType",
+      "Policy": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Policy",
+      "Process": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Process",
+      "SOAService": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Service",
+      "ServiceComposition": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#ServiceComposition",
+      "ServiceContract": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#ServiceContract",
+      "ServiceInterface": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#ServiceInterface",
+      "System": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#System",
+      "Task": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#Task",
+      "appliesTo": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#appliesTo",
+      "compositionPattern": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#compositionPattern",
+      "constraints": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#constraints",
+      "does": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#does",
+      "doneBy": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#doneBy",
+      "hasContract": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#hasContract",
+      "hasInput": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#hasInput",
+      "hasInterface": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#hasInterface",
+      "hasOutput": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#hasOutput",
+      "interactionAspect": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#interactionAspect",
+      "involvesParty": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#involvesParty",
+      "isContractFor": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#isContractFor",
+      "isInputAt": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#isInputAt",
+      "isInterfaceOf": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#isInterfaceOf",
+      "isOutputAt": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#isOutputAt",
+      "isSetBy": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#isSetBy",
+      "isSpecifiedBy": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#isSpecifiedBy",
+      "isSubjectTo": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#isSubjectTo",
+      "legalAspect": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#legalAspect",
+      "orchestratedBy": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#orchestratedBy",
+      "orchestrates": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#orchestrates",
+      "performedBy": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#performedBy",
+      "performs": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#performs",
+      "representedBy": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#representedBy",
+      "represents": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#represents",
+      "respondedToBy": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#respondedToBy",
+      "respondsTo": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#respondsTo",
+      "setsPolicy": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#setsPolicy",
+      "specifies": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#specifies",
+      "usedBy": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#usedBy",
+      "uses": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#uses"
     }
   ],
   "@graph": [
@@ -238,7 +279,7 @@
         "DefinedTerm"
       ],
       "description": "An event is something that happens, to which an element may choose to respond. Events can be responded to by any element. Similarly, events may be generated (emitted) by any element. Knowing the events generated or responded to by an element makes it easier and more transparent to interact with that element. Note that some events may occur whether generated or responded to by an element or not.<p>Event as a concept is generic and has relevance to the domain of SOA as well as many other domains. For the purposes of this ontology, event is used in its generic sense. <p>From a design perspective events may have more granular parts or may be expressed and made operational through specific syntax or semantics. We have chosen to stay at the concept level and not include such design aspects in the ontology.",
-      "name": "Event",
+      "name": "SOAEvent",
       "subjectOf": {
         "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p7.htm"
       },
@@ -323,14 +364,19 @@
         "DefinedTerm"
       ],
       "description": "A service is a logical representation of a repeatable activity that has a specified outcome. It is self-contained and is a ‘black box’ to its consumers. In the context of the SOA ontology we consider only SOA-based services.",
-      "name": "Service",
+      "name": "SOAService",
       "subjectOf": {
         "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
       },
       "termCode": "Service",
-      "rdfs:subClassOf": {
-        "@id": "soa:Element"
-      }
+      "rdfs:subClassOf": [
+        {
+          "@id": "soa:Element"
+        },
+        {
+          "@id": "http://schema.org/Service"
+        }
+      ]
     },
     {
       "@id": "soa:ServiceComposition",
@@ -1271,6 +1317,7 @@
         "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p15.htm"
       },
       "name": "Service-Oriented Architecture Ontology (OWL)",
+      "description": "OWL ontology with definitions of SOA Ontology. The terms referenced from hasDefinedTerm represents equivalent Schema.org-like-Schema definitions without using OWL constraints.",
       "subjectOf": {
         "@id": "https://www.opengroup.org//soa/source-book/ontologyv2/"
       },
@@ -1463,7 +1510,7 @@ table.table {
                         
                         <li><a href="#soa%3AElement">Element</a></li>
                         
-                        <li><a href="#soa%3AEvent">Event</a></li>
+                        <li><a href="#soa%3AEvent">SOAEvent</a></li>
                         
                         <li><a href="#soa%3AHumanActor">Human actor</a></li>
                         
@@ -1473,7 +1520,7 @@ table.table {
                         
                         <li><a href="#soa%3AProcess">Process</a></li>
                         
-                        <li><a href="#soa%3AService">Service</a></li>
+                        <li><a href="#soa%3AService">SOAService</a></li>
                         
                         <li><a href="#soa%3AServiceComposition">Service composition</a></li>
                         
@@ -1721,7 +1768,7 @@ table.table {
             <td style='text-align:left'><ul>
                         <li><a href="#soa%3AHumanActor">Human actor</a></li>
                         
-                        <li><a href="#soa%3AService">Service</a></li>
+                        <li><a href="#soa%3AService">SOAService</a></li>
                         
                         <li><a href="#soa%3ASystem">System</a></li>
                         
@@ -1772,7 +1819,7 @@ table.table {
         </div>
         <hr/><br/><br/>
            <div>
-            <h3> Event</h3>
+            <h3> SOAEvent</h3>
             
             
             
@@ -1785,7 +1832,7 @@ table.table {
             <td style='text-align:left'><span>soa:Event</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>Event</span></td>
+            <td style='text-align:left'><span>SOAEvent</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">@type</th>
             <td style='text-align:left'><ul>
@@ -2073,7 +2120,7 @@ table.table {
         </div>
         <hr/><br/><br/>
            <div>
-            <h3> Service</h3>
+            <h3> SOAService</h3>
             
             
             
@@ -2086,7 +2133,7 @@ table.table {
             <td style='text-align:left'><span>soa:Service</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>Service</span></td>
+            <td style='text-align:left'><span>SOAService</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">@type</th>
             <td style='text-align:left'><ul>
@@ -2105,7 +2152,11 @@ table.table {
             <td style='text-align:left'><span>Service</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">rdfs:subClassOf</th>
-            <td style='text-align:left'><a href="#soa%3AElement">Element</a></td>
+            <td style='text-align:left'><ul>
+                        <li><a href="#soa%3AElement">Element</a></li>
+                        
+                        <li><a href="http://schema.org/Service">http://schema.org/Service</a></li>
+                        </ul></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
             <td style='text-align:left'><a href="#./">./</a></td>
@@ -2716,7 +2767,7 @@ table.table {
             <td style='text-align:left'><span>Inverse of property soa:generates</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
-            <td style='text-align:left'><a href="#soa%3AEvent">Event</a></td>
+            <td style='text-align:left'><a href="#soa%3AEvent">SOAEvent</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
             <td style='text-align:left'><a href="#soa%3Agenerates">generates</a></td>
@@ -2768,7 +2819,7 @@ table.table {
             <td style='text-align:left'><a href="#soa%3AElement">Element</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
-            <td style='text-align:left'><a href="#soa%3AEvent">Event</a></td>
+            <td style='text-align:left'><a href="#soa%3AEvent">SOAEvent</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">subjectOf<span>&nbsp;</span><a href="http://schema.org/subjectOf">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//www.opengroup.org/soa/source-book/ontologyv2/p7.htm">Service-Oriented Architecture Ontology Version 2.0 – Event</a></td>
@@ -2814,7 +2865,7 @@ table.table {
             <td style='text-align:left'><span>Inverse of property soa:isContractFor</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
-            <td style='text-align:left'><a href="#soa%3AService">Service</a></td>
+            <td style='text-align:left'><a href="#soa%3AService">SOAService</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
             <td style='text-align:left'><a href="#soa%3AisContractFor">is contract for</a></td>
@@ -2918,7 +2969,7 @@ table.table {
             <td style='text-align:left'><span>The hasInterface property, and its inverse isInterfaceOf, capture the abstract notion of a service having a particular service interface. In one direction, any service must have at least one service interface; anything else would be contrary to the definition of a service as a representation of a repeatable activity that has a specified outcome and is a ‘black box’ to its consumers. In the other direction, there can be service interfaces that are not yet interfaces of any defined services. Also, the same service interface can be an interface of multiple services. The latter does not mean that these services are the same, nor even that they have the same effect; it only means that it is possible to interact with all these services in the manner defined by the service interface in question.</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
-            <td style='text-align:left'><a href="#soa%3AService">Service</a></td>
+            <td style='text-align:left'><a href="#soa%3AService">SOAService</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
             <td style='text-align:left'><a href="#soa%3AServiceInterface">Service interface</a></td>
@@ -3135,7 +3186,7 @@ table.table {
             <td style='text-align:left'><a href="#soa%3AServiceContract">Service contract</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
-            <td style='text-align:left'><a href="#soa%3AService">Service</a></td>
+            <td style='text-align:left'><a href="#soa%3AService">SOAService</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">subjectOf<span>&nbsp;</span><a href="http://schema.org/subjectOf">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//www.opengroup.org/soa/source-book/ontologyv2/p4.htm">Service-Oriented Architecture Ontology Version 2.0 – Service, ServiceContract, and ServiceInterface</a></td>
@@ -3245,7 +3296,7 @@ table.table {
             <td style='text-align:left'><a href="#soa%3AhasInterface">has interface</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
-            <td style='text-align:left'><a href="#soa%3AService">Service</a></td>
+            <td style='text-align:left'><a href="#soa%3AService">SOAService</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">subjectOf<span>&nbsp;</span><a href="http://schema.org/subjectOf">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//www.opengroup.org/soa/source-book/ontologyv2/p4.htm">Service-Oriented Architecture Ontology Version 2.0 – Service, ServiceContract, and ServiceInterface</a></td>
@@ -3719,7 +3770,7 @@ table.table {
             <td style='text-align:left'><span>Inverse of property soa:performs</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
-            <td style='text-align:left'><a href="#soa%3AService">Service</a></td>
+            <td style='text-align:left'><a href="#soa%3AService">SOAService</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
             <td style='text-align:left'><a href="#soa%3Aperforms">performs</a></td>
@@ -3774,7 +3825,7 @@ table.table {
             <td style='text-align:left'><a href="#soa%3AElement">Element</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
-            <td style='text-align:left'><a href="#soa%3AService">Service</a></td>
+            <td style='text-align:left'><a href="#soa%3AService">SOAService</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">subjectOf<span>&nbsp;</span><a href="http://schema.org/subjectOf">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//www.opengroup.org/soa/source-book/ontologyv2/p4.htm">Service-Oriented Architecture Ontology Version 2.0 – Service, ServiceContract, and ServiceInterface</a></td>
@@ -3927,7 +3978,7 @@ table.table {
             <td style='text-align:left'><span>Inverse of property soa:respondsTo</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
-            <td style='text-align:left'><a href="#soa%3AEvent">Event</a></td>
+            <td style='text-align:left'><a href="#soa%3AEvent">SOAEvent</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
             <td style='text-align:left'><a href="#soa%3ArespondsTo">responds to</a></td>
@@ -3982,7 +4033,7 @@ table.table {
             <td style='text-align:left'><a href="#soa%3AElement">Element</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
-            <td style='text-align:left'><a href="#soa%3AEvent">Event</a></td>
+            <td style='text-align:left'><a href="#soa%3AEvent">SOAEvent</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">subjectOf<span>&nbsp;</span><a href="http://schema.org/subjectOf">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//www.opengroup.org/soa/source-book/ontologyv2/p7.htm">Service-Oriented Architecture Ontology Version 2.0 – Event</a></td>
@@ -4234,6 +4285,9 @@ table.table {
             <th style="text-align:left;" class="prop">@type</th>
             <td style='text-align:left'><span>DefinedTermSet</span></td>
             </tr><tr>
+            <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
+            <td style='text-align:left'><span>OWL ontology with definitions of SOA Ontology. The terms referenced from hasDefinedTerm represents equivalent Schema.org-like-Schema definitions without using OWL constraints.</span></td>
+            </tr><tr>
             <th style="text-align:left;" class="prop">path<span>&nbsp;</span><a href="http://schema.org/contentUrl">[?]</a></th>
             <td style='text-align:left'><a href="https://www.opengroup.org/soa/ontology/20140404/soa.owl">https://www.opengroup.org/soa/ontology/20140404/soa.owl</a></td>
             </tr><tr>
@@ -4245,7 +4299,7 @@ table.table {
                         
                         <li><a href="#soa%3AElement">Element</a></li>
                         
-                        <li><a href="#soa%3AEvent">Event</a></li>
+                        <li><a href="#soa%3AEvent">SOAEvent</a></li>
                         
                         <li><a href="#soa%3AHumanActor">Human actor</a></li>
                         
@@ -4255,7 +4309,7 @@ table.table {
                         
                         <li><a href="#soa%3AProcess">Process</a></li>
                         
-                        <li><a href="#soa%3AService">Service</a></li>
+                        <li><a href="#soa%3AService">SOAService</a></li>
                         
                         <li><a href="#soa%3AServiceComposition">Service composition</a></li>
                         

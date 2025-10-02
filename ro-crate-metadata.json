@@ -65,159 +65,50 @@
         "Dataset",
         "Profile"
       ],
+      "name": "Service-Oriented Architecture Ontology Profile Crate",
+      "description": "An RO-Crate profile for applying the SOA ontology",
+      "",
+      "isBasedOn": {
+        "@id": "https://www.opengroup.org//soa/source-book/ontologyv2/"
+      },
+      "license": {
+        "@id": "https://www.apache.org/licenses/LICENSE-2.0"
+      },
+      "isProfileOf": [
+        {"@id": "https://w3id.org/ro/crate/1.2"}
+      ],
       "conformsTo": {
         "@id": "https://w3id.org/ro/profiles/schema/1.0"
       },
+      "hasResource": [
+        {
+          "@id": "#hasSOAVocabulary"
+        }
+      ],
+      "hasPart": [
+        {
+          "@id": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl"
+        }
+      ],     
       "mentions": [
-        {
-          "@id": "soa:Composition"
-        },
-        {
-          "@id": "soa:Effect"
-        },
-        {
-          "@id": "soa:Element"
-        },
-        {
-          "@id": "soa:Event"
-        },
-        {
-          "@id": "soa:HumanActor"
-        },
-        {
-          "@id": "soa:InformationType"
-        },
-        {
-          "@id": "soa:Policy"
-        },
-        {
-          "@id": "soa:Process"
-        },
-        {
-          "@id": "soa:Service"
-        },
-        {
-          "@id": "soa:ServiceComposition"
-        },
-        {
-          "@id": "soa:ServiceContract"
-        },
-        {
-          "@id": "soa:ServiceInterface"
-        },
-        {
-          "@id": "soa:System"
-        },
-        {
-          "@id": "soa:Task"
-        },
-        {
-          "@id": "soa:appliesTo"
-        },
-        {
-          "@id": "soa:compositionPattern"
-        },
-        {
-          "@id": "soa:constraints"
-        },
-        {
-          "@id": "soa:does"
-        },
-        {
-          "@id": "soa:doneBy"
-        },
-        {
-          "@id": "soa:generatedBy"
-        },
-        {
-          "@id": "soa:generates"
-        },
-        {
-          "@id": "soa:hasContract"
-        },
-        {
-          "@id": "soa:hasInput"
-        },
-        {
-          "@id": "soa:hasInterface"
-        },
-        {
-          "@id": "soa:hasOutput"
-        },
-        {
-          "@id": "soa:interactionAspect"
-        },
-        {
-          "@id": "soa:involvesParty"
-        },
-        {
-          "@id": "soa:isContractFor"
-        },
-        {
-          "@id": "soa:isInputAt"
-        },
-        {
-          "@id": "soa:isInterfaceOf"
-        },
-        {
-          "@id": "soa:isOutputAt"
-        },
-        {
-          "@id": "soa:isPartyTo"
-        },
-        {
-          "@id": "soa:isSetBy"
-        },
-        {
-          "@id": "soa:isSpecifiedBy"
-        },
-        {
-          "@id": "soa:isSubjectTo"
-        },
-        {
-          "@id": "soa:legalAspect"
-        },
-        {
-          "@id": "soa:orchestratedBy"
-        },
-        {
-          "@id": "soa:orchestrates"
-        },
-        {
-          "@id": "soa:performedBy"
-        },
-        {
-          "@id": "soa:performs"
-        },
-        {
-          "@id": "soa:representedBy"
-        },
-        {
-          "@id": "soa:represents"
-        },
-        {
-          "@id": "soa:respondedToBy"
-        },
-        {
-          "@id": "soa:respondsTo"
-        },
-        {
-          "@id": "soa:setsPolicy"
-        },
-        {
-          "@id": "soa:specifies"
-        },
-        {
-          "@id": "soa:usedBy"
-        },
-        {
-          "@id": "soa:uses"
-        },
         {
           "@id": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl"
         }
       ]
     },
+    {
+      "@id": "https://www.apache.org/licenses/LICENSE-2.0",
+      "@type": "CreativeWork",
+      "name": "Apache License 2.0",
+      "version": "2.0",
+      "identifier": { "@id": "http://spdx.org/licenses/Apache-2.0"}
+    },
+    { 
+      "@id": "#hasSOAVocabulary",
+      "@type": "ResourceDescriptor",
+      "hasRole": { "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary" },
+      "hasArtifact": {"@id": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl"}
+    },    
     {
       "@id": "schema:Organization",
       "@type": "rdfs:Class",
