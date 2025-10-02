@@ -58,20 +58,22 @@
         "@id": "https://w3id.org/ro/crate/1.2"
       },
       "about": {
-        "@id": "./"
+        "@id": "https://stain.github.io/soa-schema/"
       },
       "creator": {
         "@id": "https://orcid.org/0000-0001-9842-9718"
       }
     },
     {
-      "@id": "./",
+      "@id": "https://stain.github.io/soa-schema/",
       "@type": [
         "Dataset",
         "Profile"
       ],
       "name": "Service-Oriented Architecture Ontology Profile Crate",
       "description": "An RO-Crate profile for applying the SOA ontology",
+      "version": "0.1.0",
+      "datePublished": "2025-10-02",
       "author": [
         { 
           "@id": "http://opengroup.org/getinvolved/workgroups/soa"
