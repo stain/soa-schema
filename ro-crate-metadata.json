@@ -222,8 +222,12 @@
     {
       "@id": "soa:Effect",
       "@type": ["rdfs:Class", "DefinedTerm"],
+      "name": "Effect",
+      "termCode": "Effect",
+      "description": "Interacting with something performing a service has effects. These comprise the outcome of that interaction, and are how a service (through the element that performs it) delivers value to its consumers.<p>Note that the Effect class purely represents how results or value is delivered to someone interacting with a service. Any possible internal side-effects are explicitly not covered by the Effect class.",
+      "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"},
       "rdfs:subClassOf": {
-        "@id": "http://schema.org/Thing"
+        "@id": "http://schema.org/Intangible"
       }
     },
     {
@@ -244,7 +248,9 @@
       "name": "Event",
       "termCode": "Event",
       "description": "An event is something that happens, to which an element may choose to respond. Events can be responded to by any element. Similarly, events may be generated (emitted) by any element. Knowing the events generated or responded to by an element makes it easier and more transparent to interact with that element. Note that some events may occur whether generated or responded to by an element or not.<p>Event as a concept is generic and has relevance to the domain of SOA as well as many other domains. For the purposes of this ontology, event is used in its generic sense. <p>From a design perspective events may have more granular parts or may be expressed and made operational through specific syntax or semantics. We have chosen to stay at the concept level and not include such design aspects in the ontology.",
-
+      "rdfs:subClassOf": {
+          "@id": "http://schema.org/Thing"
+        },
       "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p7.htm"}
     },
     {
@@ -253,9 +259,32 @@
       "name": "Human actor",
       "termCode": "HumanActor",
       "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p3.htm"},
+      "rdfs:subClassOf": {
+          "@id": "http://schema.org/Thing"
+      },
       "description": "A human actor is a person or an organization. (...) HumanActor is specifically not defined as disjoint with System since an organization in many cases is in fact just a particular kind of system",
       "rdfs:subClassOf": {
         "@id": "soa:Element"
+      }
+    },
+    {
+      "@id": "http://schema.org/Person",
+      "@type": "rdfs:Class",
+      "inDefinedTermSet": {
+        "@id": "https://schema.org/docs/releases.html#v22.0"
+      },
+      "rdfs:subClassOf": {
+        "@id": "soa:HumanActor"
+      }
+    },
+    {
+      "@id": "http://schema.org/Organization",
+      "@type": "rdfs:Class",
+      "inDefinedTermSet": {
+        "@id": "https://schema.org/docs/releases.html#v22.0"
+      },
+      "rdfs:subClassOf": {
+        "@id": "soa:HumanActor"
       }
     },
     {
@@ -263,6 +292,9 @@
       "@type": ["rdfs:Class", "DefinedTerm"],
       "name": "Information type",
       "termCode": "InformationType",
+      "rdfs:subClassOf": {
+        "@id": "http://schema.org/Intangible"
+      },
       "description": "A service interface can enable another element to give information to or receive information from a service (when it uses that service); specifically the types of information given or received.<p>In any concrete interaction through a service interface the information types on that interface are instantiated by information items, yet for the service interface itself it is the types that are important. Note that the constraints datatype property on ServiceInterface, if necessary, can be used to express constraints on allowed values for certain information types.",
       "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"}
     },
@@ -272,6 +304,10 @@
       "name": "Policy",
       "termCode": "Policy",
       "description": "A policy is a statement of direction that a human actor may intend to follow or may intend that another human actor should follow. Knowing the policies that apply to something makes it easier and more transparent to interact with that something.<p>Policy as a concept is generic and has relevance outside the domain of SOA. For the purposes of this SOA ontology it has not been necessary or relevant to restrict the generic nature of the Policy class itself. The relationships between Policy and HumanActor are of course bound by the SOA-specific restrictions that have been applied on the definition of HumanActor.<p>From a design perspective policies may have more granular parts or may be expressed and made operational through specific rules. We have chosen to stay at the concept level and not include such design aspects in the ontology.<p>Policy is distinct from all other concepts in this ontology, hence the Policy class is defined as disjoint with all other defined classes. In particular, Policy is disjoint with ServiceContract. While policies may apply to service contracts – such as security policies on who may change a given service contract – or conversely be referred to by service contracts as part of the terms, conditions, and interaction rules that interacting participants must agree to, service contracts are themselves not policies as they do not describe an intended course of action.",
+      "rdfs:subClassOf": 
+      {
+        "@id": "http://schema.org/CreativeWork"
+      },
       "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p6.htm"}
     },
     {
@@ -281,9 +317,13 @@
       "termCode": "Process",
       "description": "Another key SOA concept is the notion of process. A process is a composition whose elements are composed into a sequence or flow of activities and interactions with the objective of carrying out certain work. This definition is consistent with, for instance, the Business Process Modeling Notation (BPMN) 2.0 definition of a process. <p> Elements in process compositions can be things like human actors, tasks, services, other processes, etc. A process always adds logic via the composition pattern; the result is more than the parts",
       "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p5.htm"},      
-      "rdfs:subClassOf": {
+      "rdfs:subClassOf": [
+        {
         "@id": "soa:Composition"
-      }
+        },
+        {"@id": "http://schema.org/HowTo"}
+        
+      ]
     },
     {
       "@id": "soa:Service",
@@ -305,7 +345,7 @@
       "@type": ["rdfs:Class", "DefinedTerm"],
       "name": "Service composition",
       "termCode": "ServiceComposition",
-      "description": "A key SOA concept is the notion of service composition, the result of assembling a collection of services in order to perform a new higher-level service.<p>As a service composition is the result of assembling a collection of services, ServiceComposition is naturally a subclass of Composition.<p>A service composition may, and typically will, add logic (or even “code”) via the composition pattern. Note that a service composition is not the new higher-level service itself (due to the System and Service classes being disjoint); rather it performs (as an element) that higher-level service.",
+      "description": "A key SOA concept is the notion of service composition, the result of assembling a collection of services in order to perform a new higher-level service. As a service composition is the result of assembling a collection of services, ServiceComposition is naturally a subclass of Composition.<p>A service composition may, and typically will, add logic (or even “code”) via the composition pattern. Note that a service composition is not the new higher-level service itself (due to the System and Service classes being disjoint); rather it performs (as an element) that higher-level service.",
       "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p5.htm"},
       "rdfs:subClassOf": {
         "@id": "soa:Composition"
@@ -328,6 +368,9 @@
       "name": "Service interface",
       "termCode": "ServiceInterface",
       "description": "An important characteristic of services is that they have simple, well-defined interfaces. This makes it easy to interact with them, and enables other elements to use them in a structured manner. A service interface defines the way in which other elements can interact and exchange information with a service.<p>The concept of an interface is in general well understood by practitioners, including the notion that interfaces define the parameters for information passing in and out of them when invoked. What differs from domain to domain is the specific nature of how an interface is invoked and how information is passed back and forth. Service interfaces are typically, but not necessarily, message-based (to support loose-coupling). Furthermore, service interfaces are always defined independently from any service implementing them (to support loose-coupling and service mediation).",
+      "rdfs:subClassOf": {
+        "@id": "http;//schema.org/CreativeWork"
+      },
       "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"}
     },
     {
@@ -348,7 +391,6 @@
       "termCode": "Task",
       "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p3.htm"},
       "description": "A task is an atomic action which accomplishes a defined result. Tasks are done by people or organizations, specifically by instances of HumanActor.",
-
       "rdfs:subClassOf": [
         {
           "@id": "soa:Element"
@@ -465,6 +507,9 @@
     {
       "@id": "soa:hasContract",
       "@type": ["rdf:Property", "DefinedTerm"],
+      "name": "has contract",
+      "termCode": "hasContract",
+      "description": "Inverse of property soa:isContractFor",
       "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"},
       "inverseOf": {
         "@id": "soa:isContractFor"
@@ -685,6 +730,8 @@
     {
       "@id": "soa:legalAspect",
       "@type": ["rdf:Property", "DefinedTerm"],
+      "name": "legal aspect",
+      "termCode": "legalAspect",
       "description": "Service contracts explicitly regulate both the interaction aspects (see the hasContract and isContractFor properties) and the legal agreement aspects (see the involvedParty and isPartyTo properties) of using a service. The two types of aspects are formally captured by defining the interactionAspect and legalAspect datatype properties on the ServiceContract class. Note that the second of these attributes, the legal agreement aspects, includes concepts such as Service-Level Agreements (SLAs).",
       "subjectOf": {"@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"},
       "sh:minCount": 1,
