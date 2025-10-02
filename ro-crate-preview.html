@@ -7,7 +7,7 @@
 <script type="application/ld+json"> 
   {
   "@context": [
-    "https://w3id.org/ro/crate/1.1/context",
+    "https://w3id.org/ro/crate/1.2/context",
     {
       "soa": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#",
       "sh": "http://www.w3.org/ns/shacl#",
@@ -88,7 +88,7 @@
         }
       ],
       "isBasedOn": {
-        "@id": "https://www.opengroup.org//soa/source-book/ontologyv2/"
+        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/"
       },
       "license": {
         "@id": "https://www.apache.org/licenses/LICENSE-2.0"
@@ -99,12 +99,25 @@
       "conformsTo": {
         "@id": "https://w3id.org/ro/profiles/schema/1.0"
       },
-      "hasResource": {
-        "@id": "#hasSOAVocabulary"
-      },
-      "hasPart": {
-        "@id": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl"
-      },
+      "hasResource": [
+        {
+          "@id": "#hasSOAVocabulary"
+        },
+        {
+          "@id": "#hasExampleCarWash"
+        }
+      ],
+      "hasPart": [
+        {
+          "@id": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl"
+        },
+        {
+          "@id": "#CarWashBusiness"
+        },
+        {
+          "@id": "#OnlineTVSales"
+        }
+      ],
       "mentions": {
         "@id": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl"
       }
@@ -127,10 +140,10 @@
       "url": "https://web.archive.org/web/20140625102324/http://opengroup.org/getinvolved/workgroups/soa"
     },
     {
-      "@id": "https://www.opengroup.org//soa/source-book/ontologyv2/",
+      "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/",
       "@type": "Chapter",
       "isPartOf": {
-        "@id": "http://www.opengroup.org/soasource-book/intro/"
+        "@id": "http://www.opengroup.org/soa/source-book/intro/"
       },
       "name": "Service-Oriented Architecture Ontology Version 2.0"
     },
@@ -146,11 +159,23 @@
     {
       "@id": "#hasSOAVocabulary",
       "@type": "ResourceDescriptor",
+      "name": "Vocabulary: SOA",
       "hasRole": {
         "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary"
       },
       "hasArtifact": {
         "@id": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl"
+      }
+    },
+    {
+      "@id": "#hasExampleCarWash",
+      "@type": "ResourceDescriptor",
+      "name": "Example: Car wash",
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/example"
+      },
+      "hasArtifact": {
+        "@id": "#CarWashExample"
       }
     },
     {
@@ -304,14 +329,39 @@
         }
       ],
       "license": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p15.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p15.htm"
       },
       "name": "Service-Oriented Architecture Ontology (OWL)",
       "description": "OWL ontology with definitions of SOA Ontology. The terms referenced from hasDefinedTerm represents equivalent Schema.org-like-Schema definitions without using OWL constraints.",
       "subjectOf": {
-        "@id": "https://www.opengroup.org//soa/source-book/ontologyv2/"
+        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/"
       },
       "version": "2.0"
+    },
+    {
+      "@id": "#CarWashBusiness",
+      "@type": [
+        "HumanActor",
+        "System",
+        "LocalBusiness"
+      ],
+      "name": "Car wash business (example)",
+      "uses": [
+        {
+          "@id": "#CarWash"
+        },
+        {
+          "@id": "#Administration"
+        }
+      ]
+    },
+    {
+      "@id": "#OnlineTVSales",
+      "@type": [
+        "HumanActor",
+        "Organization"
+      ],
+      "name": "Online TV Sales"
     },
     {
       "@id": "https://www.opengroup.org/",
@@ -323,6 +373,602 @@
       "@type": "CollegeOrUniversity",
       "name": "The University of Manchester",
       "url": "https://www.manchester.ac.uk/"
+    },
+    {
+      "@id": "#CarWashExample",
+      "@type": "LearningResource",
+      "name": "Car wash business represented using SOA",
+      "isBasedOn": {
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p8.htm"
+      },
+      "mainEntity": {
+        "@id": "#CarWashBusiness"
+      },
+      "hasPart": [
+        {
+          "@id": "#Administration"
+        },
+        {
+          "@id": "#AdministrativeSystem"
+        },
+        {
+          "@id": "#AutomatedCarWash"
+        },
+        {
+          "@id": "#AutomatedCarWashProcess"
+        },
+        {
+          "@id": "#BasicWash"
+        },
+        {
+          "@id": "#BasicWashContract"
+        },
+        {
+          "@id": "#CarWash"
+        },
+        {
+          "@id": "#CarWashBusiness"
+        },
+        {
+          "@id": "#CarWashProcess"
+        },
+        {
+          "@id": "#CarWashSystem"
+        },
+        {
+          "@id": "#Dry"
+        },
+        {
+          "@id": "#GoldWash"
+        },
+        {
+          "@id": "#InitiateAutomatedWash"
+        },
+        {
+          "@id": "#Jack"
+        },
+        {
+          "@id": "#Joe"
+        },
+        {
+          "@id": "#John"
+        },
+        {
+          "@id": "#Judy"
+        },
+        {
+          "@id": "#Mary"
+        },
+        {
+          "@id": "#Owner"
+        },
+        {
+          "@id": "#PaymentUpFront"
+        },
+        {
+          "@id": "#PreWash"
+        },
+        {
+          "@id": "#PreWashGuy"
+        },
+        {
+          "@id": "#PushWashButton"
+        },
+        {
+          "@id": "#Secretary"
+        },
+        {
+          "@id": "#TypeOfWash"
+        },
+        {
+          "@id": "#Wash"
+        },
+        {
+          "@id": "#WashingMachineInterface"
+        },
+        {
+          "@id": "#WashManager"
+        },
+        {
+          "@id": "#WashOperator"
+        },
+        {
+          "@id": "#WashWindows"
+        }
+      ]
+    },
+    {
+      "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p8.htm",
+      "@type": "Chapter",
+      "isPartOf": {
+        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/"
+      },
+      "name": "Service-Oriented Architecture Ontology Version 2.0 – Complete Car Wash Example"
+    },
+    {
+      "@id": "#Administration",
+      "@type": "HumanActor",
+      "name": "Administration",
+      "represents": {
+        "@id": "#AdministrativeSystem"
+      },
+      "uses": [
+        {
+          "@id": "#Owner"
+        },
+        {
+          "@id": "#Secretary"
+        }
+      ]
+    },
+    {
+      "@id": "#AdministrativeSystem",
+      "@type": "System",
+      "name": "Administrative system"
+    },
+    {
+      "@id": "#AutomatedCarWash",
+      "@type": "Element",
+      "name": "Automated car wash",
+      "represents": {
+        "@id": "#AutomatedCarWashProcess"
+      },
+      "orchestrates": {
+        "@id": "#AutomatedCarWashProcess"
+      }
+    },
+    {
+      "@id": "#AutomatedCarWashProcess",
+      "@type": [
+        "Process",
+        "Orchestration"
+      ],
+      "name": "Automated car wash process",
+      "uses": [
+        {
+          "@id": "#Wash"
+        },
+        {
+          "@id": "#Dry"
+        }
+      ]
+    },
+    {
+      "@id": "#BasicWash",
+      "@type": "Service",
+      "name": "Basic wash",
+      "hasContract": {
+        "@id": "#BasicWashContract"
+      },
+      "hasInterface": {
+        "@id": "#WashingMachineInterface"
+      },
+      "representedBy": {
+        "@id": "#WashManager"
+      }
+    },
+    {
+      "@id": "#BasicWashContract",
+      "@type": "ServiceContract",
+      "name": "Basic wash contract",
+      "interactionAspect": "Car returned clean after 2 hours",
+      "involvesParty": [
+        {
+          "@id": "#CarWashBusiness"
+        },
+        {
+          "@id": "#Judy"
+        }
+      ],
+      "legalAspect": "$10 for one basic wash"
+    },
+    {
+      "@id": "#CarWash",
+      "@type": "HumanActor",
+      "name": "Car wash",
+      "represents": {
+        "@id": "#CarWashSystem"
+      }
+    },
+    {
+      "@id": "#CarWashProcess",
+      "@type": "Process",
+      "name": "Car wash process",
+      "uses": [
+        {
+          "@id": "#AutomatedCarWash"
+        },
+        {
+          "@id": "#PreWash"
+        },
+        {
+          "@id": "#PreWashGuy"
+        },
+        {
+          "@id": "#InitiateAutomatedWash"
+        },
+        {
+          "@id": "#WashOperator"
+        }
+      ]
+    },
+    {
+      "@id": "#CarWashSystem",
+      "@type": "System",
+      "name": "Car wash system",
+      "performs": [
+        {
+          "@id": "#BasicWash"
+        },
+        {
+          "@id": "#GoldWash"
+        }
+      ],
+      "uses": [
+        {
+          "@id": "#PreWashGuy"
+        },
+        {
+          "@id": "#WashOperator"
+        },
+        {
+          "@id": "#WashManager"
+        },
+        {
+          "@id": "#CarWashProcess"
+        }
+      ]
+    },
+    {
+      "@id": "#Dry",
+      "@type": "Task",
+      "name": "Dry"
+    },
+    {
+      "@id": "#GoldWash",
+      "@type": "Service",
+      "name": "Gold wash",
+      "hasInterface": {
+        "@id": "#WashingMachineInterface"
+      },
+      "representedBy": {
+        "@id": "#WashManager"
+      }
+    },
+    {
+      "@id": "#InitiateAutomatedWash",
+      "@type": "Element",
+      "name": "Initiate automated wash",
+      "represents": {
+        "@id": "#PushWashButton"
+      }
+    },
+    {
+      "@id": "#Jack",
+      "@type": [
+        "HumanActor",
+        "Person"
+      ],
+      "name": "Jack"
+    },
+    {
+      "@id": "#Joe",
+      "@type": [
+        "HumanActor",
+        "Person"
+      ],
+      "name": "Joe"
+    },
+    {
+      "@id": "#John",
+      "@type": [
+        "HumanActor",
+        "Person"
+      ],
+      "name": "John"
+    },
+    {
+      "@id": "#Judy",
+      "@type": [
+        "HumanActor",
+        "Person"
+      ],
+      "name": "Judy",
+      "uses": {
+        "@id": "#WashManager"
+      }
+    },
+    {
+      "@id": "#Mary",
+      "@type": [
+        "HumanActor",
+        "Person"
+      ],
+      "name": "Mary"
+    },
+    {
+      "@id": "#Owner",
+      "@type": "Element",
+      "name": "Owner",
+      "representedBy": {
+        "@id": "#Joe"
+      }
+    },
+    {
+      "@id": "#PaymentUpFront",
+      "@type": "Policy",
+      "name": "Payment up front",
+      "isSetBy": {
+        "@id": "#Joe"
+      },
+      "appliesTo": [
+        {
+          "@id": "#GoldWash"
+        },
+        {
+          "@id": "#BasicWash"
+        }
+      ]
+    },
+    {
+      "@id": "#PreWash",
+      "@type": "Element",
+      "name": "Pre wash",
+      "represents": {
+        "@id": "#WashWindows"
+      }
+    },
+    {
+      "@id": "#PreWashGuy",
+      "@type": "Element",
+      "name": "Pre wash guy",
+      "representedBy": {
+        "@id": "#John"
+      }
+    },
+    {
+      "@id": "#PushWashButton",
+      "@type": "Task",
+      "doneBy": {
+        "@id": "#Jack"
+      }
+    },
+    {
+      "@id": "#Secretary",
+      "@type": "Element",
+      "name": "Wash operator",
+      "representedBy": {
+        "@id": "#Mary"
+      }
+    },
+    {
+      "@id": "#TypeOfWash",
+      "@type": [
+        "InformationType",
+        "Enumeration"
+      ],
+      "name": "Type of wash"
+    },
+    {
+      "@id": "#Wash",
+      "@type": "Task",
+      "name": "Wash"
+    },
+    {
+      "@id": "#WashingMachineInterface",
+      "@type": "ServiceInterface",
+      "name": "Washing machine interface",
+      "hasInput": {
+        "@id": "#TypeOfWash"
+      }
+    },
+    {
+      "@id": "#WashManager",
+      "@type": "Element",
+      "name": "Wash manager",
+      "representedBy": {
+        "@id": "#Jack"
+      }
+    },
+    {
+      "@id": "#WashOperator",
+      "@type": "Element",
+      "name": "Wash operator",
+      "representedBy": {
+        "@id": "#Jack"
+      }
+    },
+    {
+      "@id": "#WashWindows",
+      "@type": "Task",
+      "name": "Wash windows",
+      "doneBy": {
+        "@id": "#John"
+      }
+    },
+    {
+      "@id": "#InternetPurchaseExample",
+      "@type": "LearningResource",
+      "name": "Internet Purchase example represented using SOA",
+      "isBasedOn": {
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p9.htm"
+      },
+      "mainEntity": {
+        "@id": "#OnlineTVSales"
+      },
+      "hasPart": [
+        {
+          "@id": "#Jill"
+        },
+        {
+          "@id": "#PurchaseTV"
+        },
+        {
+          "@id": "#BuyTVOnline"
+        },
+        {
+          "@id": "#BuyTVOnlineContract"
+        },
+        {
+          "@id": "#OnlineSalesComponent"
+        },
+        {
+          "@id": "#OnlineTVSales"
+        },
+        {
+          "@id": "#SelectWhatToBuyComponent"
+        },
+        {
+          "@id": "#SelectWhatToBuyService"
+        },
+        {
+          "@id": "#PayComponent"
+        },
+        {
+          "@id": "#PayService"
+        },
+        {
+          "@id": "#PayForTV"
+        },
+        {
+          "@id": "#DeliverTV"
+        },
+        {
+          "@id": "#OnlineTVSalesProcess"
+        }
+      ]
+    },
+    {
+      "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p9.htm",
+      "@type": "Chapter",
+      "isPartOf": {
+        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/"
+      },
+      "name": "Service-Oriented Architecture Ontology Version 2.0 – Internet Purchase Example"
+    },
+    {
+      "@id": "#Jill",
+      "@type": [
+        "HumanActor",
+        "Person"
+      ],
+      "name": "Jill",
+      "does": [
+        {
+          "@id": "#PurchaseTV"
+        },
+        {
+          "@id": "#PayForTV"
+        }
+      ]
+    },
+    {
+      "@id": "#PurchaseTV",
+      "@type": "Task",
+      "name": "Purchase TV",
+      "uses": {
+        "@id": "#BuyTVOnline"
+      }
+    },
+    {
+      "@id": "#BuyTVOnline",
+      "@type": "Service",
+      "name": "Buy TV online"
+    },
+    {
+      "@id": "#BuyTVOnlineContract",
+      "@type": "ServiceContract",
+      "name": "Buy TV Online contract",
+      "interactionAspect": "Click the Buy button after reviewing basket",
+      "legalAspect": "Will deliver in 5 working days"
+    },
+    {
+      "@id": "#OnlineSalesComponent",
+      "@type": "Element",
+      "name": "Online Sales component",
+      "performs": {
+        "@id": "#OnlineTVSales"
+      },
+      "uses": [
+        {
+          "@id": "#SelectWhatToBuyService"
+        },
+        {
+          "@id": "#PayService"
+        }
+      ]
+    },
+    {
+      "@id": "#SelectWhatToBuyComponent",
+      "@type": "Element",
+      "name": "Select what to buy component",
+      "performs": {
+        "@id": "#SelectWhatToBuyService"
+      }
+    },
+    {
+      "@id": "#SelectWhatToBuyService",
+      "@type": "Service",
+      "name": "Select what to buy service"
+    },
+    {
+      "@id": "#PayComponent",
+      "@type": "Element",
+      "name": "Pay component",
+      "performs": {
+        "@id": "#PayService"
+      }
+    },
+    {
+      "@id": "#PayService",
+      "@type": "Service",
+      "name": "Pay service"
+    },
+    {
+      "@id": "#PayForTV",
+      "@type": "Task",
+      "name": "Pay for TV",
+      "uses": {
+        "@id": "#BuyTVOnline"
+      }
+    },
+    {
+      "@id": "#DeliverTV",
+      "@type": "Task",
+      "name": "Deliver TV"
+    },
+    {
+      "@id": "#OnlineTVSalesProcess",
+      "@type": "Process",
+      "name": "OnlineTVSalesProces",
+      "uses": [
+        {
+          "@id": "#Jill"
+        },
+        {
+          "@id": "#OnlineTVSales"
+        },
+        {
+          "@id": "#PurchaseTV"
+        },
+        {
+          "@id": "#PayForTV"
+        },
+        {
+          "@id": "#DeliverTV"
+        }
+      ]
+    },
+    {
+      "@id": "#hasExampleInternetPurchase",
+      "@type": "ResourceDescriptor",
+      "name": "Example: Internet Purchase",
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/example"
+      },
+      "hasArtifact": {
+        "@id": "#InternetPurchaseExample"
+      }
     },
     {
       "@id": "schema:Organization",
@@ -343,7 +989,7 @@
       "description": "A human actor is a person or an organization. (...) HumanActor is specifically not defined as disjoint with System since an organization in many cases is in fact just a particular kind of system",
       "name": "Human actor",
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p3.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p3.htm"
       },
       "termCode": "HumanActor",
       "rdfs:subClassOf": {
@@ -369,7 +1015,7 @@
       "description": "A composition is the result of assembling a collection of things for a particular purpose. Note in particular that we have purposefully distinguished between the act of composing and the resulting composition as a thing, and that it is in the latter sense we are using the concept of composition here.",
       "name": "Composition",
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p5.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p5.htm"
       },
       "termCode": "Composition",
       "rdfs:subClassOf": {
@@ -385,7 +1031,7 @@
       "description": "Interacting with something performing a service has effects. These comprise the outcome of that interaction, and are how a service (through the element that performs it) delivers value to its consumers.<p>Note that the Effect class purely represents how results or value is delivered to someone interacting with a service. Any possible internal side-effects are explicitly not covered by the Effect class.",
       "name": "Effect",
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
       },
       "termCode": "Effect",
       "rdfs:subClassOf": {
@@ -401,7 +1047,7 @@
       "description": "An element is an opaque entity that is indivisible at a given level of abstraction. The element has a clearly defined boundary.",
       "name": "Element",
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p2.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p2.htm"
       },
       "rdfs:subClassOf": {
         "@id": "schema:Thing"
@@ -416,7 +1062,7 @@
       "description": "An event is something that happens, to which an element may choose to respond. Events can be responded to by any element. Similarly, events may be generated (emitted) by any element. Knowing the events generated or responded to by an element makes it easier and more transparent to interact with that element. Note that some events may occur whether generated or responded to by an element or not.<p>Event as a concept is generic and has relevance to the domain of SOA as well as many other domains. For the purposes of this ontology, event is used in its generic sense. <p>From a design perspective events may have more granular parts or may be expressed and made operational through specific syntax or semantics. We have chosen to stay at the concept level and not include such design aspects in the ontology.",
       "name": "SOAEvent",
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p7.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p7.htm"
       },
       "termCode": "Event",
       "rdfs:subClassOf": {
@@ -432,7 +1078,7 @@
       "description": "A service interface can enable another element to give information to or receive information from a service (when it uses that service); specifically the types of information given or received.<p>In any concrete interaction through a service interface the information types on that interface are instantiated by information items, yet for the service interface itself it is the types that are important. Note that the constraints datatype property on ServiceInterface, if necessary, can be used to express constraints on allowed values for certain information types.",
       "name": "Information type",
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
       },
       "termCode": "InformationType",
       "rdfs:subClassOf": {
@@ -448,7 +1094,7 @@
       "description": "A policy is a statement of direction that a human actor may intend to follow or may intend that another human actor should follow. Knowing the policies that apply to something makes it easier and more transparent to interact with that something.<p>Policy as a concept is generic and has relevance outside the domain of SOA. For the purposes of this SOA ontology it has not been necessary or relevant to restrict the generic nature of the Policy class itself. The relationships between Policy and HumanActor are of course bound by the SOA-specific restrictions that have been applied on the definition of HumanActor.<p>From a design perspective policies may have more granular parts or may be expressed and made operational through specific rules. We have chosen to stay at the concept level and not include such design aspects in the ontology.<p>Policy is distinct from all other concepts in this ontology, hence the Policy class is defined as disjoint with all other defined classes. In particular, Policy is disjoint with ServiceContract. While policies may apply to service contracts – such as security policies on who may change a given service contract – or conversely be referred to by service contracts as part of the terms, conditions, and interaction rules that interacting participants must agree to, service contracts are themselves not policies as they do not describe an intended course of action.",
       "name": "Policy",
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p6.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p6.htm"
       },
       "termCode": "Policy",
       "rdfs:subClassOf": {
@@ -464,7 +1110,7 @@
       "description": "Another key SOA concept is the notion of process. A process is a composition whose elements are composed into a sequence or flow of activities and interactions with the objective of carrying out certain work. This definition is consistent with, for instance, the Business Process Modeling Notation (BPMN) 2.0 definition of a process. <p> Elements in process compositions can be things like human actors, tasks, services, other processes, etc. A process always adds logic via the composition pattern; the result is more than the parts",
       "name": "Process",
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p5.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p5.htm"
       },
       "termCode": "Process",
       "rdfs:subClassOf": [
@@ -485,7 +1131,7 @@
       "description": "A service is a logical representation of a repeatable activity that has a specified outcome. It is self-contained and is a ‘black box’ to its consumers. In the context of the SOA ontology we consider only SOA-based services.",
       "name": "SOAService",
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
       },
       "termCode": "Service",
       "rdfs:subClassOf": [
@@ -506,7 +1152,7 @@
       "description": "A key SOA concept is the notion of service composition, the result of assembling a collection of services in order to perform a new higher-level service. As a service composition is the result of assembling a collection of services, ServiceComposition is naturally a subclass of Composition.<p>A service composition may, and typically will, add logic (or even “code”) via the composition pattern. Note that a service composition is not the new higher-level service itself (due to the System and Service classes being disjoint); rather it performs (as an element) that higher-level service.",
       "name": "Service composition",
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p5.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p5.htm"
       },
       "termCode": "ServiceComposition",
       "rdfs:subClassOf": {
@@ -522,7 +1168,7 @@
       "description": "In many cases, specific agreements are needed in order to define how to use a service. This can either be because of a desire to regulate such use or can simply be because the service will not function properly unless interaction with it is done in a certain sequence. A service contract defines the terms, conditions, and interaction rules that interacting participants must agree to (directly or indirectly). A service contract is binding on all participants in the interaction, including the service itself and the element that provides it for the particular interaction in question",
       "name": "Service contract",
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
       },
       "termCode": "ServiceContract",
       "rdfs:subClassOf": {
@@ -538,7 +1184,7 @@
       "description": "An important characteristic of services is that they have simple, well-defined interfaces. This makes it easy to interact with them, and enables other elements to use them in a structured manner. A service interface defines the way in which other elements can interact and exchange information with a service.<p>The concept of an interface is in general well understood by practitioners, including the notion that interfaces define the parameters for information passing in and out of them when invoked. What differs from domain to domain is the specific nature of how an interface is invoked and how information is passed back and forth. Service interfaces are typically, but not necessarily, message-based (to support loose-coupling). Furthermore, service interfaces are always defined independently from any service implementing them (to support loose-coupling and service mediation).",
       "name": "Service interface",
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
       },
       "termCode": "ServiceInterface",
       "rdfs:subClassOf": {
@@ -554,7 +1200,7 @@
       "description": "A system is an organized collection of other things. Specifically things in a system collection are instances of Element, each such instance being used by the system.",
       "name": "System",
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p2.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p2.htm"
       },
       "termCode": "System",
       "rdfs:subClassOf": {
@@ -570,7 +1216,7 @@
       "description": "A task is an atomic action which accomplishes a defined result. Tasks are done by people or organizations, specifically by instances of HumanActor.",
       "name": "Task",
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p3.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p3.htm"
       },
       "termCode": "Task",
       "rdfs:subClassOf": {
@@ -592,7 +1238,7 @@
         "@id": "schema:Thing"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p6.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p6.htm"
       },
       "termCode": "appliesTo"
     },
@@ -611,7 +1257,7 @@
         "@id": "schema:Text"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p5.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p5.htm"
       },
       "termCode": "compositionPattern",
       "sh:maxCount": 1,
@@ -632,7 +1278,7 @@
         "@id": "schema:Text"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
       },
       "termCode": "constraints",
       "sh:maxCount": 1,
@@ -656,7 +1302,7 @@
         "@id": "soa:Task"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p3.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p3.htm"
       },
       "termCode": "does"
     },
@@ -675,7 +1321,7 @@
         "@id": "soa:HumanActor"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p3.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p3.htm"
       },
       "termCode": "doneBy",
       "sh:maxCount": 1,
@@ -699,7 +1345,7 @@
         "@id": "soa:Element"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p7.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p7.htm"
       }
     },
     {
@@ -717,7 +1363,7 @@
         "@id": "soa:Event"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p7.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p7.htm"
       }
     },
     {
@@ -738,7 +1384,7 @@
         "@id": "soa:ServiceContract"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
       },
       "termCode": "hasContract"
     },
@@ -757,7 +1403,7 @@
         "@id": "soa:InformationType"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
       },
       "termCode": "hasInput"
     },
@@ -776,7 +1422,7 @@
         "@id": "soa:ServiceInterface"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
       },
       "termCode": "hasInterface",
       "sh:minCount": 1
@@ -796,7 +1442,7 @@
         "@id": "soa:InformationType"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
       },
       "termCode": "hasOutput"
     },
@@ -815,7 +1461,7 @@
         "@id": "schema:Text"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
       },
       "termCode": "interactionAspect",
       "sh:maxCount": 1,
@@ -839,7 +1485,7 @@
         "@id": "soa:HumanActor"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
       },
       "termCode": "involvesParty"
     },
@@ -858,7 +1504,7 @@
         "@id": "soa:Service"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
       },
       "termCode": "isContractFor",
       "sh:minCount": 1
@@ -881,7 +1527,7 @@
         "@id": "soa:ServiceInterface"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
       },
       "termCode": "isInputAt"
     },
@@ -903,7 +1549,7 @@
         "@id": "soa:Service"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
       },
       "termCode": "isInterfaceOf"
     },
@@ -925,7 +1571,7 @@
         "@id": "soa:ServiceInterface"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
       },
       "termCode": "isOutputAt"
     },
@@ -943,7 +1589,7 @@
         "@id": "soa:ServiceContract"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
       }
     },
     {
@@ -952,6 +1598,9 @@
         "rdf:Property",
         "DefinedTerm"
       ],
+      "rdfs:subPropertyOf": {
+        "@id": "http://schema.org/author"
+      },
       "description": "Inverse of property soa:setsPolicy",
       "domainIncludes": {
         "@id": "soa:Policy"
@@ -964,7 +1613,7 @@
         "@id": "soa:HumanActor"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p6.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p6.htm"
       },
       "termCode": "isSetBy"
     },
@@ -986,7 +1635,7 @@
         "@id": "soa:ServiceContract"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
       },
       "termCode": "isSpecifiedBy",
       "sh:minCount": 1
@@ -1009,7 +1658,7 @@
         "@id": "soa:Policy"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p6.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p6.htm"
       },
       "termCode": "isSubjectTo"
     },
@@ -1028,7 +1677,7 @@
         "@id": "schema:Text"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
       },
       "termCode": "legalAspect",
       "sh:maxCount": 1,
@@ -1049,7 +1698,7 @@
         "@id": "soa:Element"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p2.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p2.htm"
       },
       "termCode": "orchestratedBy",
       "sh:maxCount": 1,
@@ -1073,7 +1722,7 @@
         "@id": "soa:Composition"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p2.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p2.htm"
       },
       "termCode": "orchestrates",
       "sh:maxCount": 1,
@@ -1097,7 +1746,7 @@
         "@id": "soa:Element"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
       },
       "termCode": "performedBy"
     },
@@ -1116,7 +1765,7 @@
         "@id": "soa:Service"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
       },
       "termCode": "performs"
     },
@@ -1138,7 +1787,7 @@
         "@id": "soa:Element"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p2.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p2.htm"
       },
       "termCode": "representedBy"
     },
@@ -1157,7 +1806,7 @@
         "@id": "soa:Element"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p2.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p2.htm"
       },
       "termCode": "represents"
     },
@@ -1179,7 +1828,7 @@
         "@id": "soa:Element"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p7.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p7.htm"
       },
       "termCode": "respondedToBy"
     },
@@ -1198,7 +1847,7 @@
         "@id": "soa:Event"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p7.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p7.htm"
       },
       "termCode": "respondsTo"
     },
@@ -1217,7 +1866,7 @@
         "@id": "soa:Policy"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p6.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p6.htm"
       },
       "termCode": "setsPolicy"
     },
@@ -1236,7 +1885,7 @@
         "@id": "soa:Effect"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p4.htm"
       },
       "termCode": "specifies",
       "sh:minCount": 1
@@ -1259,7 +1908,7 @@
         "@id": "soa:Element"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p2.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p2.htm"
       },
       "termCode": "usedBy"
     },
@@ -1278,69 +1927,69 @@
         "@id": "soa:Element"
       },
       "subjectOf": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p2.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p2.htm"
       },
       "termCode": "uses"
     },
     {
-      "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p15.htm",
+      "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p15.htm",
       "@type": "Chapter",
       "isPartOf": {
-        "@id": "https://www.opengroup.org//soa/source-book/ontologyv2/"
+        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/"
       },
       "name": "Service-Oriented Architecture Ontology Version 2.0 – Legal",
       "text": "Copyright<p>      Copyright © 2010-2014, The Open Group<p>The Open Group hereby authorizes you to use this document for any purpose, PROVIDED THAT any copy of this document, or any part thereof, which you make shall retain all copyright and other proprietary notices contained herein.<p>This document may contain other proprietary notices and copyright information.<p>Nothing contained herein shall be construed as conferring by implication, estoppel, or otherwise any license or right under any patent or trademark of The Open Group or any third party. Except as expressly provided above, nothing contained herein shall be construed as conferring any license or right under any copyright of The Open Group.<p>Note that any product, process, or technology in this document may be the subject of other intellectual property rights reserved by The Open Group, and may not be licensed hereunder.<p>This document is provided \"AS IS\" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. Some jurisdictions do not allow the exclusion of implied warranties, so the above exclusion may not apply to you.<p>Any publication of The Open Group may include technical inaccuracies or typographical errors. Changes may be periodically made to these publications; these changes will be incorporated in new editions of these publications. The Open Group may make improvements and/or changes in the products and/or the programs described in these publications at any time without notice.<p>Should any viewer of this document respond with information including feedback data, such as questions, comments, suggestions, or the like regarding the content of this document, such information shall be deemed to be non-confidential and The Open Group shall have no obligation of any kind with respect to such information and shall be free to reproduce, use, disclose, and distribute the information to others without limitation. Further, The Open Group shall be free to use any ideas, concepts, know-how, or techniques contained in such information for any purpose whatsoever including but not limited to developing, manufacturing, and marketing products incorporating such information.<p>If you did not obtain this copy through The Open Group, it may not be the latest version. For your convenience, the latest version of this publication may be downloaded at www.opengroup.org/bookstore.<p><p>Open Group Standard<p>Service-Oriented Architecture Ontology, Version 2.0<p>ISBN:  1-937218-50-8<p>Document Number:  C144<p><p>Published by The Open Group, April 2014.<p><p>Comments relating to the material contained in this document may be submitted to:<p>The Open Group, Apex Plaza, Forbury Road, Reading, Berkshire, RG1 1AX, United Kingdom<p>or by electronic mail to:<p>ogspecs@opengroup.org\n      Trademarks<p>ArchiMate®, DirecNet®, Jericho Forum®, Making Standards Work®, OpenPegasus®, The Open Group®, TOGAF®, and UNIX® are registered trademarks and Boundaryless Information Flow™, Build with Integrity Buy with Confidence™, Dependability Through Assuredness™, FACE™, Open Platform 3.0™, Open Trusted Technology Provider™, and The Open Group Certification Mark™ are trademarks of The Open Group.<p>All other brands, company, and product names are used for identification purposes only and may be trademarks that are the sole property of their respective owners."
     },
     {
-      "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p5.htm",
+      "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p5.htm",
       "@type": "Chapter",
       "isPartOf": {
-        "@id": "https://www.opengroup.org//soa/source-book/ontologyv2/"
+        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/"
       },
       "name": "Service-Oriented Architecture Ontology Version 2.0 – Composition and its Subclasses"
     },
     {
-      "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p4.htm",
+      "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p4.htm",
       "@type": "Chapter",
       "isPartOf": {
-        "@id": "https://www.opengroup.org//soa/source-book/ontologyv2/"
+        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/"
       },
       "name": "Service-Oriented Architecture Ontology Version 2.0 – Service, ServiceContract, and ServiceInterface"
     },
     {
-      "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p2.htm",
+      "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p2.htm",
       "@type": "Chapter",
       "isPartOf": {
-        "@id": "https://www.opengroup.org//soa/source-book/ontologyv2/"
+        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/"
       },
       "name": "Service-Oriented Architecture Ontology Version 2.0 – System and Element"
     },
     {
-      "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p7.htm",
+      "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p7.htm",
       "@type": "Chapter",
       "isPartOf": {
-        "@id": "https://www.opengroup.org//soa/source-book/ontologyv2/"
+        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/"
       },
       "name": "Service-Oriented Architecture Ontology Version 2.0 – Event"
     },
     {
-      "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p3.htm",
+      "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p3.htm",
       "@type": "Chapter",
       "isPartOf": {
-        "@id": "https://www.opengroup.org//soa/source-book/ontologyv2/"
+        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/"
       },
       "name": "Service-Oriented Architecture Ontology Version 2.0 – HumanActor and Task"
     },
     {
-      "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p6.htm",
+      "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p6.htm",
       "@type": "Chapter",
       "isPartOf": {
-        "@id": "https://www.opengroup.org//soa/source-book/ontologyv2/"
+        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/"
       },
       "name": "Service-Oriented Architecture Ontology Version 2.0 – Policy"
     },
     {
-      "@id": "http://www.opengroup.org/soasource-book/intro/",
+      "@id": "http://www.opengroup.org/soa/source-book/intro/",
       "@type": "Book",
       "copyrightHolder": {
         "@id": "https://www.opengroup.org/"
@@ -1348,7 +1997,7 @@
       "datePublished": "2014-04",
       "isbn": "978-1-93-721850-8",
       "license": {
-        "@id": "http://www.opengroup.org/soasource-book/ontologyv2/p15.htm"
+        "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p15.htm"
       },
       "name": "SOA Source Book",
       "publisher": {
@@ -1439,22 +2088,32 @@ table.table {
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">isBasedOn<span>&nbsp;</span><a href="http://schema.org/isBasedOn">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//www.opengroup.org//soa/source-book/ontologyv2/">Service-Oriented Architecture Ontology Version 2.0</a></td>
+            <td style='text-align:left'><a href="#https%3A//www.opengroup.org/soa/source-book/ontologyv2/">Service-Oriented Architecture Ontology Version 2.0</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">license<span>&nbsp;</span><a href="http://schema.org/license">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">isProfileOf</th>
+            <th style="text-align:left;" class="prop">isProfileOf<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/isProfileOf">[?]</a></th>
             <td style='text-align:left'><a href="https://w3id.org/ro/crate/1.2">https://w3id.org/ro/crate/1.2</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">conformsTo<span>&nbsp;</span><a href="http://purl.org/dc/terms/conformsTo">[?]</a></th>
             <td style='text-align:left'><a href="https://w3id.org/ro/profiles/schema/1.0">https://w3id.org/ro/profiles/schema/1.0</a></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">hasResource</th>
-            <td style='text-align:left'><a href="#%23hasSOAVocabulary">#hasSOAVocabulary</a></td>
+            <th style="text-align:left;" class="prop">hasResource<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasResource">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#%23hasSOAVocabulary">Vocabulary: SOA</a></li>
+                        
+                        <li><a href="#%23hasExampleCarWash">Example: Car wash</a></li>
+                        </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
-            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            <td style='text-align:left'><ul>
+                        <li><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></li>
+                        
+                        <li><a href="#%23CarWashBusiness">Car wash business (example)</a></li>
+                        
+                        <li><a href="#%23OnlineTVSales">Online TV Sales</a></li>
+                        </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
             <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
@@ -1534,17 +2193,17 @@ table.table {
         </div>
         <hr/><br/><br/>
            <div>
-            <h3><a href="https://www.opengroup.org//soa/source-book/ontologyv2/">Go to: </a> Service-Oriented Architecture Ontology Version 2.0</h3>
+            <h3><a href="https://www.opengroup.org/soa/source-book/ontologyv2/">Go to: </a> Service-Oriented Architecture Ontology Version 2.0</h3>
             
             
             
             
-        <div id="https://www.opengroup.org//soa/source-book/ontologyv2/">
+        <div id="https://www.opengroup.org/soa/source-book/ontologyv2/">
             
             <table class="table metadata table-striped" >
                 <tbody><tr>
             <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><a href="https://www.opengroup.org//soa/source-book/ontologyv2/">https://www.opengroup.org//soa/source-book/ontologyv2/</a></td>
+            <td style='text-align:left'><a href="https://www.opengroup.org/soa/source-book/ontologyv2/">https://www.opengroup.org/soa/source-book/ontologyv2/</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
             <td style='text-align:left'><span>Service-Oriented Architecture Ontology Version 2.0</span></td>
@@ -1553,7 +2212,7 @@ table.table {
             <td style='text-align:left'><span>Chapter</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">isPartOf<span>&nbsp;</span><a href="http://schema.org/isPartOf">[?]</a></th>
-            <td style='text-align:left'><a href="#http%3A//www.opengroup.org/soasource-book/intro/">SOA Source Book</a></td>
+            <td style='text-align:left'><a href="#http%3A//www.opengroup.org/soa/source-book/intro/">SOA Source Book</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">isBasedOn<span>&nbsp;</span><a href="http://schema.org/isBasedOn">[?]</a></th>
             <td style='text-align:left'><a href="#./">Service-Oriented Architecture Ontology Profile Crate</a></td>
@@ -1563,19 +2222,23 @@ table.table {
             </tr><tr>
             <th style="text-align:left;" class="prop">isPartOf<span>&nbsp;</span><a href="http://schema.org/isPartOf">[?]</a></th>
             <td style='text-align:left'><ul>
-                        <li><a href="#http%3A//www.opengroup.org/soasource-book/ontologyv2/p15.htm">Service-Oriented Architecture Ontology Version 2.0 – Legal</a></li>
+                        <li><a href="#http%3A//www.opengroup.org/soa/source-book/ontologyv2/p15.htm">Service-Oriented Architecture Ontology Version 2.0 – Legal</a></li>
                         
-                        <li><a href="#http%3A//www.opengroup.org/soasource-book/ontologyv2/p2.htm">Service-Oriented Architecture Ontology Version 2.0 – System and Element</a></li>
+                        <li><a href="#http%3A//www.opengroup.org/soa/source-book/ontologyv2/p2.htm">Service-Oriented Architecture Ontology Version 2.0 – System and Element</a></li>
                         
-                        <li><a href="#http%3A//www.opengroup.org/soasource-book/ontologyv2/p3.htm">Service-Oriented Architecture Ontology Version 2.0 – HumanActor and Task</a></li>
+                        <li><a href="#http%3A//www.opengroup.org/soa/source-book/ontologyv2/p3.htm">Service-Oriented Architecture Ontology Version 2.0 – HumanActor and Task</a></li>
                         
-                        <li><a href="#http%3A//www.opengroup.org/soasource-book/ontologyv2/p4.htm">Service-Oriented Architecture Ontology Version 2.0 – Service, ServiceContract, and ServiceInterface</a></li>
+                        <li><a href="#http%3A//www.opengroup.org/soa/source-book/ontologyv2/p4.htm">Service-Oriented Architecture Ontology Version 2.0 – Service, ServiceContract, and ServiceInterface</a></li>
                         
-                        <li><a href="#http%3A//www.opengroup.org/soasource-book/ontologyv2/p5.htm">Service-Oriented Architecture Ontology Version 2.0 – Composition and its Subclasses</a></li>
+                        <li><a href="#http%3A//www.opengroup.org/soa/source-book/ontologyv2/p5.htm">Service-Oriented Architecture Ontology Version 2.0 – Composition and its Subclasses</a></li>
                         
-                        <li><a href="#http%3A//www.opengroup.org/soasource-book/ontologyv2/p6.htm">Service-Oriented Architecture Ontology Version 2.0 – Policy</a></li>
+                        <li><a href="#http%3A//www.opengroup.org/soa/source-book/ontologyv2/p6.htm">Service-Oriented Architecture Ontology Version 2.0 – Policy</a></li>
                         
-                        <li><a href="#http%3A//www.opengroup.org/soasource-book/ontologyv2/p7.htm">Service-Oriented Architecture Ontology Version 2.0 – Event</a></li>
+                        <li><a href="#http%3A//www.opengroup.org/soa/source-book/ontologyv2/p7.htm">Service-Oriented Architecture Ontology Version 2.0 – Event</a></li>
+                        
+                        <li><a href="#http%3A//www.opengroup.org/soa/source-book/ontologyv2/p8.htm">Service-Oriented Architecture Ontology Version 2.0 – Complete Car Wash Example</a></li>
+                        
+                        <li><a href="#http%3A//www.opengroup.org/soa/source-book/ontologyv2/p9.htm">Service-Oriented Architecture Ontology Version 2.0 – Internet Purchase Example</a></li>
                         </ul></td>
             </tr></tbody>
             </table>
@@ -1617,7 +2280,7 @@ table.table {
         </div>
         <hr/><br/><br/><hr/><br/><br/><hr/><br/><br/>
            <div>
-            <h3> #hasSOAVocabulary</h3>
+            <h3> Vocabulary: SOA</h3>
             
             
             
@@ -1629,16 +2292,52 @@ table.table {
             <th style="text-align:left;" class="prop">@id</th>
             <td style='text-align:left'><span>#hasSOAVocabulary</span></td>
             </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>Vocabulary: SOA</span></td>
+            </tr><tr>
             <th style="text-align:left;" class="prop">@type</th>
             <td style='text-align:left'><span>ResourceDescriptor</span></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">hasRole</th>
+            <th style="text-align:left;" class="prop">hasRole<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasRole">[?]</a></th>
             <td style='text-align:left'><a href="http://www.w3.org/ns/dx/prof/role/vocabulary">http://www.w3.org/ns/dx/prof/role/vocabulary</a></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">hasArtifact</th>
+            <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
             <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">hasResource</th>
+            <th style="text-align:left;" class="prop">hasResource<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasResource">[?]</a></th>
+            <td style='text-align:left'><a href="#./">Service-Oriented Architecture Ontology Profile Crate</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> Example: Car wash</h3>
+            
+            
+            
+            
+        <div id="#hasExampleCarWash">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>#hasExampleCarWash</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>Example: Car wash</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>ResourceDescriptor</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasRole<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasRole">[?]</a></th>
+            <td style='text-align:left'><a href="http://www.w3.org/ns/dx/prof/role/example">http://www.w3.org/ns/dx/prof/role/example</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
+            <td style='text-align:left'><a href="#%23CarWashExample">Car wash business represented using SOA</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasResource<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasResource">[?]</a></th>
             <td style='text-align:left'><a href="#./">Service-Oriented Architecture Ontology Profile Crate</a></td>
             </tr></tbody>
             </table>
@@ -1771,10 +2470,10 @@ table.table {
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">license<span>&nbsp;</span><a href="http://schema.org/license">[?]</a></th>
-            <td style='text-align:left'><a href="#http%3A//www.opengroup.org/soasource-book/ontologyv2/p15.htm">Service-Oriented Architecture Ontology Version 2.0 – Legal</a></td>
+            <td style='text-align:left'><a href="#http%3A//www.opengroup.org/soa/source-book/ontologyv2/p15.htm">Service-Oriented Architecture Ontology Version 2.0 – Legal</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">subjectOf<span>&nbsp;</span><a href="http://schema.org/subjectOf">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//www.opengroup.org//soa/source-book/ontologyv2/">Service-Oriented Architecture Ontology Version 2.0</a></td>
+            <td style='text-align:left'><a href="#https%3A//www.opengroup.org/soa/source-book/ontologyv2/">Service-Oriented Architecture Ontology Version 2.0</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">version<span>&nbsp;</span><a href="http://schema.org/version">[?]</a></th>
             <td style='text-align:left'><span>2.0</span></td>
@@ -1785,8 +2484,102 @@ table.table {
             <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
             <td style='text-align:left'><a href="#./">Service-Oriented Architecture Ontology Profile Crate</a></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">hasArtifact</th>
-            <td style='text-align:left'><a href="#%23hasSOAVocabulary">#hasSOAVocabulary</a></td>
+            <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
+            <td style='text-align:left'><a href="#%23hasSOAVocabulary">Vocabulary: SOA</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> Car wash business (example)</h3>
+            
+            
+            
+            
+        <div id="#CarWashBusiness">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>#CarWashBusiness</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>Car wash business (example)</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>HumanActor</span></li>
+                        
+                        <li><span>System</span></li>
+                        
+                        <li><span>LocalBusiness</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">uses<span>&nbsp;</span><a href="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#uses">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#%23CarWash">Car wash</a></li>
+                        
+                        <li><a href="#%23Administration">Administration</a></li>
+                        </ul></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#./">Service-Oriented Architecture Ontology Profile Crate</a></li>
+                        
+                        <li><a href="#%23CarWashExample">Car wash business represented using SOA</a></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">mainEntity<span>&nbsp;</span><a href="http://schema.org/mainEntity">[?]</a></th>
+            <td style='text-align:left'><a href="#%23CarWashExample">Car wash business represented using SOA</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">involvesParty<span>&nbsp;</span><a href="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#involvesParty">[?]</a></th>
+            <td style='text-align:left'><a href="#%23BasicWashContract">Basic wash contract</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> Online TV Sales</h3>
+            
+            
+            
+            
+        <div id="#OnlineTVSales">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>#OnlineTVSales</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>Online TV Sales</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>HumanActor</span></li>
+                        
+                        <li><span>Organization</span></li>
+                        </ul></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#./">Service-Oriented Architecture Ontology Profile Crate</a></li>
+                        
+                        <li><a href="#%23InternetPurchaseExample">Internet Purchase example represented using SOA</a></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">mainEntity<span>&nbsp;</span><a href="http://schema.org/mainEntity">[?]</a></th>
+            <td style='text-align:left'><a href="#%23InternetPurchaseExample">Internet Purchase example represented using SOA</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">performs<span>&nbsp;</span><a href="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#performs">[?]</a></th>
+            <td style='text-align:left'><a href="#%23OnlineSalesComponent">Online Sales component</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">uses<span>&nbsp;</span><a href="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#uses">[?]</a></th>
+            <td style='text-align:left'><a href="#%23OnlineTVSalesProcess">OnlineTVSalesProces</a></td>
             </tr></tbody>
             </table>
         </div>
