@@ -9,175 +9,955 @@
   "@context": [
     "https://w3id.org/ro/crate/1.1/context",
     {
-      "@vocab": "http://schema.org/",
-      "subPropertyOf": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf"
+      "subPropertyOf": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+      "owl": "http://www.w3.org/2002/07/owl#",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "soa": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#"
     }
   ],
   "@graph": [
     {
       "@id": "./",
       "@type": "Dataset",
-      "conformsTo": [
-        {
-          "@id": "https://w3id.org/ro/profiles/schema/1.0"
-        }
-      ],
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/profiles/schema/1.0"
+      },
       "mentions": [
         {
-          "@id": "#Event"
+          "@id": "soa:Composition"
         },
         {
-          "@id": "#InformationType"
+          "@id": "soa:Effect"
         },
         {
-          "@id": "#ServiceComposition"
+          "@id": "soa:Element"
         },
         {
-          "@id": "#Effect"
+          "@id": "soa:Event"
         },
         {
-          "@id": "#Task"
+          "@id": "soa:HumanActor"
         },
         {
-          "@id": "#System"
+          "@id": "soa:InformationType"
         },
         {
-          "@id": "#Service"
+          "@id": "soa:Policy"
         },
         {
-          "@id": "#Policy"
+          "@id": "soa:Process"
         },
         {
-          "@id": "#HumanActor"
+          "@id": "soa:Service"
         },
         {
-          "@id": "#Composition"
+          "@id": "soa:ServiceComposition"
         },
         {
-          "@id": "#ServiceInterface"
+          "@id": "soa:ServiceContract"
         },
         {
-          "@id": "#Element"
+          "@id": "soa:ServiceInterface"
         },
         {
-          "@id": "#ServiceContract"
+          "@id": "soa:System"
         },
         {
-          "@id": "#Process"
+          "@id": "soa:Task"
         },
         {
-          "@id": "#isPartyTo"
+          "@id": "soa:appliesTo"
+        },
+        {
+          "@id": "soa:compositionPattern"
+        },
+        {
+          "@id": "soa:constraints"
+        },
+        {
+          "@id": "soa:does"
+        },
+        {
+          "@id": "soa:doneBy"
+        },
+        {
+          "@id": "soa:generatedBy"
+        },
+        {
+          "@id": "soa:generates"
+        },
+        {
+          "@id": "soa:hasContract"
+        },
+        {
+          "@id": "soa:hasInput"
+        },
+        {
+          "@id": "soa:hasInterface"
+        },
+        {
+          "@id": "soa:hasOutput"
+        },
+        {
+          "@id": "soa:interactionAspect"
+        },
+        {
+          "@id": "soa:involvesParty"
+        },
+        {
+          "@id": "soa:isContractFor"
+        },
+        {
+          "@id": "soa:isInputAt"
+        },
+        {
+          "@id": "soa:isInterfaceOf"
+        },
+        {
+          "@id": "soa:isOutputAt"
+        },
+        {
+          "@id": "soa:isPartyTo"
+        },
+        {
+          "@id": "soa:isSetBy"
+        },
+        {
+          "@id": "soa:isSpecifiedBy"
+        },
+        {
+          "@id": "soa:isSubjectTo"
+        },
+        {
+          "@id": "soa:legalAspect"
+        },
+        {
+          "@id": "soa:orchestratedBy"
+        },
+        {
+          "@id": "soa:orchestrates"
+        },
+        {
+          "@id": "soa:performedBy"
+        },
+        {
+          "@id": "soa:performs"
+        },
+        {
+          "@id": "soa:representedBy"
+        },
+        {
+          "@id": "soa:represents"
+        },
+        {
+          "@id": "soa:respondedToBy"
+        },
+        {
+          "@id": "soa:respondsTo"
+        },
+        {
+          "@id": "soa:setsPolicy"
+        },
+        {
+          "@id": "soa:specifies"
+        },
+        {
+          "@id": "soa:usedBy"
+        },
+        {
+          "@id": "soa:uses"
+        },
+        {
+          "@id": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl"
         }
       ]
     },
     {
-      "@id": "#Event",
-      "@type": "rdfs:Class",
-      "name": [
-        "Event"
-      ]
-    },
-    {
-      "@id": "#InformationType",
-      "@type": "rdfs:Class",
-      "name": [
-        "InformationType"
-      ]
-    },
-    {
-      "@id": "#ServiceComposition",
-      "@type": "rdfs:Class",
-      "name": [
-        "ServiceComposition"
-      ]
-    },
-    {
-      "@id": "#Effect",
-      "@type": "rdfs:Class",
-      "name": [
-        "Effect"
-      ]
-    },
-    {
-      "@id": "#Task",
-      "@type": "rdfs:Class",
-      "name": [
-        "Task"
-      ]
-    },
-    {
-      "@id": "#System",
-      "@type": "rdfs:Class",
-      "name": [
-        "System"
-      ]
-    },
-    {
-      "@id": "#Service",
-      "@type": "rdfs:Class",
-      "name": [
-        "Service"
-      ]
-    },
-    {
-      "@id": "#Policy",
-      "@type": "rdfs:Class",
-      "name": [
-        "Policy"
-      ]
-    },
-    {
-      "@id": "#HumanActor",
-      "@type": "rdfs:Class",
-      "name": [
-        "HumanActor"
-      ]
-    },
-    {
-      "@id": "#Composition",
-      "@type": "rdfs:Class",
-      "name": [
-        "Composition"
-      ]
-    },
-    {
-      "@id": "#ServiceInterface",
-      "@type": "rdfs:Class",
-      "name": [
-        "ServiceInterface"
-      ]
-    },
-    {
-      "@id": "#Element",
-      "@type": "rdfs:Class",
-      "name": [
-        "Element"
-      ]
-    },
-    {
-      "@id": "#ServiceContract",
-      "@type": "rdfs:Class",
-      "name": [
-        "ServiceContract"
-      ]
-    },
-    {
-      "@id": "#Process",
-      "@type": "rdfs:Class",
-      "name": [
-        "Process"
-      ]
-    },
-    {
-      "@id": "#isPartyTo",
-      "@type": "rdf:Property",
-      "name": [
-        "isPartyTo"
+      "@id": "soa:Composition",
+      "@type": [
+        "rdfs:Class",
+        "DefinedTerm"
       ],
-      "rangeIncludes": [],
-      "domainIncludes": [
+      "rdfs:subClassOf": [
         {
-          "@id": "#HumanActor-1"
+          "@id": "soa:System"
+        },
+        {
+          "@id": "_:b17"
+        },
+        {
+          "@id": "_:b2"
+        },
+        {
+          "@id": "_:b3"
+        },
+        {
+          "@id": "_:b4"
+        }
+      ]
+    },
+    {
+      "@id": "soa:Effect",
+      "@type": [
+        "rdfs:Class",
+        "DefinedTerm"
+      ],
+      "rdfs:subClassOf": {
+        "@id": "_:b16"
+      }
+    },
+    {
+      "@id": "soa:Element",
+      "@type": [
+        "rdfs:Class",
+        "DefinedTerm"
+      ],
+      "name": "Element",
+      "description": "An element is an opaque entity that is indivisible at a given level of abstraction. The element has a clearly defined boundary.",
+      "subjectOf": {
+        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p2.htm"
+      },
+      "rdfs:subClassOf": [
+        {
+          "@id": "_:b8"
+        },
+        {
+          "@id": "_:b9"
+        }
+      ]
+    },
+    {
+      "@id": "soa:Event",
+      "@type": [
+        "rdfs:Class",
+        "DefinedTerm"
+      ]
+    },
+    {
+      "@id": "soa:HumanActor",
+      "@type": [
+        "rdfs:Class",
+        "DefinedTerm"
+      ],
+      "rdfs:subClassOf": {
+        "@id": "soa:Element"
+      }
+    },
+    {
+      "@id": "soa:InformationType",
+      "@type": [
+        "rdfs:Class",
+        "DefinedTerm"
+      ]
+    },
+    {
+      "@id": "soa:Policy",
+      "@type": [
+        "rdfs:Class",
+        "DefinedTerm"
+      ]
+    },
+    {
+      "@id": "soa:Process",
+      "@type": [
+        "rdfs:Class",
+        "DefinedTerm"
+      ],
+      "rdfs:subClassOf": {
+        "@id": "soa:Composition"
+      }
+    },
+    {
+      "@id": "soa:Service",
+      "@type": [
+        "rdfs:Class",
+        "DefinedTerm"
+      ],
+      "rdfs:subClassOf": [
+        {
+          "@id": "soa:Element"
+        },
+        {
+          "@id": "_:b7"
+        }
+      ]
+    },
+    {
+      "@id": "soa:ServiceComposition",
+      "@type": [
+        "rdfs:Class",
+        "DefinedTerm"
+      ],
+      "rdfs:subClassOf": {
+        "@id": "soa:Composition"
+      }
+    },
+    {
+      "@id": "soa:ServiceContract",
+      "@type": [
+        "rdfs:Class",
+        "DefinedTerm"
+      ],
+      "rdfs:subClassOf": [
+        {
+          "@id": "_:b0"
+        },
+        {
+          "@id": "_:b1"
+        },
+        {
+          "@id": "_:b10"
+        },
+        {
+          "@id": "_:b11"
+        },
+        {
+          "@id": "_:b12"
+        },
+        {
+          "@id": "_:b13"
+        }
+      ]
+    },
+    {
+      "@id": "soa:ServiceInterface",
+      "@type": [
+        "rdfs:Class",
+        "DefinedTerm"
+      ],
+      "rdfs:subClassOf": [
+        {
+          "@id": "_:b14"
+        },
+        {
+          "@id": "_:b15"
+        }
+      ]
+    },
+    {
+      "@id": "soa:System",
+      "@type": [
+        "rdfs:Class",
+        "DefinedTerm"
+      ],
+      "name": "System",
+      "termCode": "System",
+      "description": "A system is an organized collection of other things. Specifically things in a system collection are instances of Element, each such instance being used by the system.",
+      "subjectOf": {
+        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p2.htm"
+      },
+      "rdfs:subClassOf": {
+        "@id": "soa:Element"
+      }
+    },
+    {
+      "@id": "soa:Task",
+      "@type": [
+        "rdfs:Class",
+        "DefinedTerm"
+      ],
+      "rdfs:subClassOf": [
+        {
+          "@id": "soa:Element"
+        },
+        {
+          "@id": "_:b5"
+        },
+        {
+          "@id": "_:b6"
+        }
+      ]
+    },
+    {
+      "@id": "soa:appliesTo",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:ObjectProperty"
+      ],
+      "domainIncludes": {
+        "@id": "soa:Policy"
+      }
+    },
+    {
+      "@id": "soa:compositionPattern",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:DatatypeProperty"
+      ],
+      "domainIncludes": {
+        "@id": "soa:Composition"
+      }
+    },
+    {
+      "@id": "soa:constraints",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:DatatypeProperty"
+      ],
+      "domainIncludes": {
+        "@id": "soa:ServiceInterface"
+      }
+    },
+    {
+      "@id": "soa:does",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:ObjectProperty"
+      ],
+      "inverseOf": {
+        "@id": "soa:doneBy"
+      }
+    },
+    {
+      "@id": "soa:doneBy",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:ObjectProperty"
+      ],
+      "domainIncludes": {
+        "@id": "soa:Task"
+      },
+      "rangeIncludes": {
+        "@id": "soa:HumanActor"
+      }
+    },
+    {
+      "@id": "soa:generatedBy",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:ObjectProperty"
+      ],
+      "inverseOf": {
+        "@id": "soa:generates"
+      }
+    },
+    {
+      "@id": "soa:generates",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:ObjectProperty"
+      ],
+      "domainIncludes": {
+        "@id": "soa:Element"
+      },
+      "rangeIncludes": {
+        "@id": "soa:Event"
+      }
+    },
+    {
+      "@id": "soa:hasContract",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:ObjectProperty"
+      ],
+      "inverseOf": {
+        "@id": "soa:isContractFor"
+      }
+    },
+    {
+      "@id": "soa:hasInput",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:ObjectProperty"
+      ],
+      "domainIncludes": {
+        "@id": "soa:ServiceInterface"
+      },
+      "rangeIncludes": {
+        "@id": "soa:InformationType"
+      }
+    },
+    {
+      "@id": "soa:hasInterface",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:ObjectProperty"
+      ],
+      "domainIncludes": {
+        "@id": "soa:Service"
+      },
+      "rangeIncludes": {
+        "@id": "soa:ServiceInterface"
+      }
+    },
+    {
+      "@id": "soa:hasOutput",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:ObjectProperty"
+      ],
+      "domainIncludes": {
+        "@id": "soa:ServiceInterface"
+      },
+      "rangeIncludes": {
+        "@id": "soa:InformationType"
+      }
+    },
+    {
+      "@id": "soa:interactionAspect",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:DatatypeProperty"
+      ],
+      "domainIncludes": {
+        "@id": "soa:ServiceContract"
+      }
+    },
+    {
+      "@id": "soa:involvesParty",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:ObjectProperty"
+      ],
+      "inverseOf": {
+        "@id": "soa:isPartyTo"
+      }
+    },
+    {
+      "@id": "soa:isContractFor",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:ObjectProperty"
+      ],
+      "domainIncludes": {
+        "@id": "soa:ServiceContract"
+      },
+      "rangeIncludes": {
+        "@id": "soa:Service"
+      }
+    },
+    {
+      "@id": "soa:isInputAt",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:ObjectProperty"
+      ],
+      "inverseOf": {
+        "@id": "soa:hasInput"
+      }
+    },
+    {
+      "@id": "soa:isInterfaceOf",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:ObjectProperty"
+      ],
+      "inverseOf": {
+        "@id": "soa:hasInterface"
+      }
+    },
+    {
+      "@id": "soa:isOutputAt",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:ObjectProperty"
+      ],
+      "inverseOf": {
+        "@id": "soa:hasOutput"
+      }
+    },
+    {
+      "@id": "soa:isPartyTo",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:ObjectProperty"
+      ],
+      "domainIncludes": {
+        "@id": "soa:HumanActor"
+      },
+      "rangeIncludes": {
+        "@id": "soa:ServiceContract"
+      }
+    },
+    {
+      "@id": "soa:isSetBy",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:ObjectProperty"
+      ],
+      "inverseOf": {
+        "@id": "soa:setsPolicy"
+      }
+    },
+    {
+      "@id": "soa:isSpecifiedBy",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:ObjectProperty"
+      ],
+      "inverseOf": {
+        "@id": "soa:specifies"
+      }
+    },
+    {
+      "@id": "soa:isSubjectTo",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:ObjectProperty"
+      ],
+      "inverseOf": {
+        "@id": "soa:appliesTo"
+      }
+    },
+    {
+      "@id": "soa:legalAspect",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:DatatypeProperty"
+      ],
+      "domainIncludes": {
+        "@id": "soa:ServiceContract"
+      }
+    },
+    {
+      "@id": "soa:orchestratedBy",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:ObjectProperty"
+      ],
+      "domainIncludes": {
+        "@id": "soa:Composition"
+      },
+      "rangeIncludes": {
+        "@id": "soa:Element"
+      }
+    },
+    {
+      "@id": "soa:orchestrates",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:ObjectProperty"
+      ],
+      "inverseOf": {
+        "@id": "soa:orchestratedBy"
+      }
+    },
+    {
+      "@id": "soa:performedBy",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:ObjectProperty"
+      ],
+      "inverseOf": {
+        "@id": "soa:performs"
+      }
+    },
+    {
+      "@id": "soa:performs",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:ObjectProperty"
+      ],
+      "domainIncludes": {
+        "@id": "soa:Element"
+      },
+      "rangeIncludes": {
+        "@id": "soa:Service"
+      }
+    },
+    {
+      "@id": "soa:representedBy",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:ObjectProperty"
+      ],
+      "inverseOf": {
+        "@id": "soa:represents"
+      }
+    },
+    {
+      "@id": "soa:represents",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:ObjectProperty"
+      ],
+      "domainIncludes": {
+        "@id": "soa:Element"
+      },
+      "rangeIncludes": {
+        "@id": "soa:Element"
+      }
+    },
+    {
+      "@id": "soa:respondedToBy",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:ObjectProperty"
+      ],
+      "inverseOf": {
+        "@id": "soa:respondsTo"
+      }
+    },
+    {
+      "@id": "soa:respondsTo",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:ObjectProperty"
+      ],
+      "domainIncludes": {
+        "@id": "soa:Element"
+      },
+      "rangeIncludes": {
+        "@id": "soa:Event"
+      }
+    },
+    {
+      "@id": "soa:setsPolicy",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:ObjectProperty"
+      ],
+      "domainIncludes": {
+        "@id": "soa:HumanActor"
+      },
+      "rangeIncludes": {
+        "@id": "soa:Policy"
+      }
+    },
+    {
+      "@id": "soa:specifies",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:ObjectProperty"
+      ],
+      "domainIncludes": {
+        "@id": "soa:ServiceContract"
+      },
+      "rangeIncludes": {
+        "@id": "soa:Effect"
+      }
+    },
+    {
+      "@id": "soa:usedBy",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:ObjectProperty"
+      ],
+      "name": "used by",
+      "description": "Inverse of property soa:uses",
+      "termCode": "usedBy",
+      "subjectOf": {
+        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p2.htm"
+      },
+      "inverseOf": {
+        "@id": "soa:uses"
+      },
+      "domainIncludes": {
+        "@id": "soa:Element"
+      },
+      "rangeIncludes": {
+        "@id": "soa:Element"
+      }
+    },
+    {
+      "@id": "soa:uses",
+      "@type": [
+        "rdf:Property",
+        "DefinedTerm",
+        "owL:ObjectProperty"
+      ],
+      "name": "uses",
+      "termCode": "uses",
+      "description": "Elements may use other elements in various ways. In general, the notion of some element using another element is applied by practitioners for all of models, executables, and physical objects. What differs from domain to domain is the way in which such use is perceived. <p>An element uses another element if it interacts with it in some fashion. Interacts here is interpreted very broadly ranging through, for example, an element simply being a member of (used by) some system (see later for a formal definition of the System class), an element interacting with (using) another element (such as a service; see later for a formal definition of the Service class) in an ad hoc fashion, or even a strongly coupled dependency in a composition (see Section 5.2 for a formal definition of the Composition class). The uses property, and its inverse usedBy, capture the abstract notion of an element using another. These properties capture not just transient relations. Instantiations of the property can include “uses at this instant”, “has used”, and “may in future use”. <p>For the purposes of this ontology we have chosen not to attempt to enumerate and formally define the multitude of different possible semantics of a uses relationship. We leave the semantic interpretations to a particular sub-domain, application, or even design approach.",
+      "subjectOf": {
+        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p2.htm"
+      },
+      "domainIncludes": {
+        "@id": "soa:Element"
+      },
+      "rangeIncludes": {
+        "@id": "soa:Element"
+      }
+    },
+    {
+      "@id": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl",
+      "@type": "DefinedTermSet",
+      "license": {
+        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p15.htm"
+      },
+      "name": "Service-Oriented Architecture Ontology (OWL)",
+      "version": "2.0",
+      "subjectOf": {
+        "@id": "https://www.opengroup.org//soa/source-book/ontologyv2/"
+      },
+      "contentUrl": "https://www.opengroup.org/soa/ontology/20140404/soa.owl",
+      "hasDefinedTerm": [
+        {
+          "@id": "soa:Composition"
+        },
+        {
+          "@id": "soa:Effect"
+        },
+        {
+          "@id": "soa:Element"
+        },
+        {
+          "@id": "soa:Event"
+        },
+        {
+          "@id": "soa:HumanActor"
+        },
+        {
+          "@id": "soa:InformationType"
+        },
+        {
+          "@id": "soa:Policy"
+        },
+        {
+          "@id": "soa:Process"
+        },
+        {
+          "@id": "soa:Service"
+        },
+        {
+          "@id": "soa:ServiceComposition"
+        },
+        {
+          "@id": "soa:ServiceContract"
+        },
+        {
+          "@id": "soa:ServiceInterface"
+        },
+        {
+          "@id": "soa:System"
+        },
+        {
+          "@id": "soa:Task"
+        },
+        {
+          "@id": "soa:appliesTo"
+        },
+        {
+          "@id": "soa:compositionPattern"
+        },
+        {
+          "@id": "soa:constraints"
+        },
+        {
+          "@id": "soa:does"
+        },
+        {
+          "@id": "soa:doneBy"
+        },
+        {
+          "@id": "soa:generatedBy"
+        },
+        {
+          "@id": "soa:generates"
+        },
+        {
+          "@id": "soa:hasContract"
+        },
+        {
+          "@id": "soa:hasInput"
+        },
+        {
+          "@id": "soa:hasInterface"
+        },
+        {
+          "@id": "soa:hasOutput"
+        },
+        {
+          "@id": "soa:interactionAspect"
+        },
+        {
+          "@id": "soa:involvesParty"
+        },
+        {
+          "@id": "soa:isContractFor"
+        },
+        {
+          "@id": "soa:isInputAt"
+        },
+        {
+          "@id": "soa:isInterfaceOf"
+        },
+        {
+          "@id": "soa:isOutputAt"
+        },
+        {
+          "@id": "soa:isPartyTo"
+        },
+        {
+          "@id": "soa:isSetBy"
+        },
+        {
+          "@id": "soa:isSpecifiedBy"
+        },
+        {
+          "@id": "soa:isSubjectTo"
+        },
+        {
+          "@id": "soa:legalAspect"
+        },
+        {
+          "@id": "soa:orchestratedBy"
+        },
+        {
+          "@id": "soa:orchestrates"
+        },
+        {
+          "@id": "soa:performedBy"
+        },
+        {
+          "@id": "soa:performs"
+        },
+        {
+          "@id": "soa:representedBy"
+        },
+        {
+          "@id": "soa:represents"
+        },
+        {
+          "@id": "soa:respondedToBy"
+        },
+        {
+          "@id": "soa:respondsTo"
+        },
+        {
+          "@id": "soa:setsPolicy"
+        },
+        {
+          "@id": "soa:specifies"
+        },
+        {
+          "@id": "soa:usedBy"
+        },
+        {
+          "@id": "soa:uses"
         }
       ]
     },
@@ -190,9 +970,237 @@
       }
     },
     {
-      "@id": "#HumanActor-1",
-      "@type": "Class",
-      "name": "HumanActor-1"
+      "@id": "_:b0",
+      "@type": "owl:Restriction",
+      "owl:minCardinality": {
+        "@type": "xsd:int",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "soa:legalAspect"
+      }
+    },
+    {
+      "@id": "_:b1",
+      "@type": "owl:Restriction",
+      "owl:maxCardinality": {
+        "@type": "xsd:int",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "soa:legalAspect"
+      }
+    },
+    {
+      "@id": "_:b10",
+      "@type": "owl:Restriction",
+      "owl:maxCardinality": {
+        "@type": "xsd:int",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "soa:interactionAspect"
+      }
+    },
+    {
+      "@id": "_:b11",
+      "@type": "owl:Restriction",
+      "owl:minCardinality": {
+        "@type": "xsd:int",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "soa:interactionAspect"
+      }
+    },
+    {
+      "@id": "_:b12",
+      "@type": "owl:Restriction",
+      "owl:minCardinality": {
+        "@type": "xsd:int",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "soa:isContractFor"
+      }
+    },
+    {
+      "@id": "_:b13",
+      "@type": "owl:Restriction",
+      "owl:minCardinality": {
+        "@type": "xsd:int",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "soa:specifies"
+      }
+    },
+    {
+      "@id": "_:b14",
+      "@type": "owl:Restriction",
+      "owl:maxCardinality": {
+        "@type": "xsd:int",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "soa:constraints"
+      }
+    },
+    {
+      "@id": "_:b15",
+      "@type": "owl:Restriction",
+      "owl:minCardinality": {
+        "@type": "xsd:int",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "soa:constraints"
+      }
+    },
+    {
+      "@id": "_:b16",
+      "@type": "owl:Restriction",
+      "owl:minCardinality": {
+        "@type": "xsd:int",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "soa:isSpecifiedBy"
+      }
+    },
+    {
+      "@id": "_:b17",
+      "@type": "owl:Restriction",
+      "owl:maxCardinality": {
+        "@type": "xsd:int",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "soa:compositionPattern"
+      }
+    },
+    {
+      "@id": "_:b2",
+      "@type": "owl:Restriction",
+      "owl:minCardinality": {
+        "@type": "xsd:int",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "soa:compositionPattern"
+      }
+    },
+    {
+      "@id": "_:b3",
+      "@type": "owl:Restriction",
+      "owl:maxCardinality": {
+        "@type": "xsd:int",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "soa:orchestratedBy"
+      }
+    },
+    {
+      "@id": "_:b4",
+      "@type": "owl:Restriction",
+      "owl:minCardinality": {
+        "@type": "xsd:int",
+        "@value": "0"
+      },
+      "owl:onProperty": {
+        "@id": "soa:orchestratedBy"
+      }
+    },
+    {
+      "@id": "_:b5",
+      "@type": "owl:Restriction",
+      "owl:minCardinality": {
+        "@type": "xsd:int",
+        "@value": "0"
+      },
+      "owl:onProperty": {
+        "@id": "soa:doneBy"
+      }
+    },
+    {
+      "@id": "_:b6",
+      "@type": "owl:Restriction",
+      "owl:maxCardinality": {
+        "@type": "xsd:int",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "soa:doneBy"
+      }
+    },
+    {
+      "@id": "_:b7",
+      "@type": "owl:Restriction",
+      "owl:minCardinality": {
+        "@type": "xsd:int",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "soa:hasInterface"
+      }
+    },
+    {
+      "@id": "_:b8",
+      "@type": "owl:Restriction",
+      "owl:minCardinality": {
+        "@type": "xsd:int",
+        "@value": "0"
+      },
+      "owl:onProperty": {
+        "@id": "soa:orchestrates"
+      }
+    },
+    {
+      "@id": "_:b9",
+      "@type": "owl:Restriction",
+      "owl:maxCardinality": {
+        "@type": "xsd:int",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "soa:orchestrates"
+      }
+    },
+    {
+      "@id": "https://www.opengroup.org//soa/source-book/ontologyv2/",
+      "@type": "Chapter",
+      "name": "Service-Oriented Architecture Ontology Version 2.0",
+      "isPartOf": {
+        "@id": "https://www.opengroup.org/soa/source-book/intro/"
+      }
+    },
+    {
+      "@id": "https://www.opengroup.org/soa/source-book/intro/",
+      "@type": "Book",
+      "name": "SOA Source Book",
+      "license": {
+        "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p15.htm"
+      },
+      "url": "https://www.opengroup.org/what-we-do-technology-standards/soa/source-book/intro"
+    },
+    {
+      "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p15.htm",
+      "@type": "Chapter",
+      "name": "Service-Oriented Architecture Ontology Version 2.0 – Legal",
+      "creditText": "Copyright © 2010-2014, The Open Group",
+      "text": "Copyright<p>      Copyright © 2010-2014, The Open Group<p>The Open Group hereby authorizes you to use this document for any purpose, PROVIDED THAT any copy of this document, or any part thereof, which you make shall retain all copyright and other proprietary notices contained herein.<p>This document may contain other proprietary notices and copyright information.<p>Nothing contained herein shall be construed as conferring by implication, estoppel, or otherwise any license or right under any patent or trademark of The Open Group or any third party. Except as expressly provided above, nothing contained herein shall be construed as conferring any license or right under any copyright of The Open Group.<p>Note that any product, process, or technology in this document may be the subject of other intellectual property rights reserved by The Open Group, and may not be licensed hereunder.<p>This document is provided \"AS IS\" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. Some jurisdictions do not allow the exclusion of implied warranties, so the above exclusion may not apply to you.<p>Any publication of The Open Group may include technical inaccuracies or typographical errors. Changes may be periodically made to these publications; these changes will be incorporated in new editions of these publications. The Open Group may make improvements and/or changes in the products and/or the programs described in these publications at any time without notice.<p>Should any viewer of this document respond with information including feedback data, such as questions, comments, suggestions, or the like regarding the content of this document, such information shall be deemed to be non-confidential and The Open Group shall have no obligation of any kind with respect to such information and shall be free to reproduce, use, disclose, and distribute the information to others without limitation. Further, The Open Group shall be free to use any ideas, concepts, know-how, or techniques contained in such information for any purpose whatsoever including but not limited to developing, manufacturing, and marketing products incorporating such information.<p>If you did not obtain this copy through The Open Group, it may not be the latest version. For your convenience, the latest version of this publication may be downloaded at www.opengroup.org/bookstore.<p><p>Open Group Standard<p>Service-Oriented Architecture Ontology, Version 2.0<p>ISBN:  1-937218-50-8<p>Document Number:  C144<p><p>Published by The Open Group, April 2014.<p><p>Comments relating to the material contained in this document may be submitted to:<p>The Open Group, Apex Plaza, Forbury Road, Reading, Berkshire, RG1 1AX, United Kingdom<p>or by electronic mail to:<p>ogspecs@opengroup.org\n      Trademarks<p>ArchiMate®, DirecNet®, Jericho Forum®, Making Standards Work®, OpenPegasus®, The Open Group®, TOGAF®, and UNIX® are registered trademarks and Boundaryless Information Flow™, Build with Integrity Buy with Confidence™, Dependability Through Assuredness™, FACE™, Open Platform 3.0™, Open Trusted Technology Provider™, and The Open Group Certification Mark™ are trademarks of The Open Group.<p>All other brands, company, and product names are used for identification purposes only and may be trademarks that are the sole property of their respective owners.",
+      "isPartOf": {
+        "@id": "https://www.opengroup.org//soa/source-book/ontologyv2/"
+      }
+    },
+    {
+      "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/p2.htm",
+      "@type": "Chapter",
+      "name": "Service-Oriented Architecture Ontology Version 2.0 – System and Element",
+      "isPartOf": {
+        "@id": "https://www.opengroup.org//soa/source-book/ontologyv2/"
+      }
     }
   ]
 }
@@ -227,8 +1235,8 @@ table.table {
   </nav>
 <div class="container">
 <div class="jumbotron">
-<h4 class="citation"></h4>
-<h3 class="item_name"></h3>
+<h4 class="citation"></h3>
+<h3 class="item_name"></h4>
 
 
 <a href="./ro-crate-metadata.json">⬇️🏷️ Download all the metadata for <span class='name'></span> in JSON-LD format</a>
@@ -243,12 +1251,12 @@ table.table {
 
 <div id="summary">
 <div class='all-meta'>
-            <div>
-                <h3> ./</h3>
-                
-                
-                
-                
+           <div>
+            <h3> ./</h3>
+            
+            
+            
+            
         <div id="./">
             
             <table class="table metadata table-striped" >
@@ -264,35 +1272,103 @@ table.table {
             </tr><tr>
             <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
             <td style='text-align:left'><ul>
-                        <li><a href="#%23Event">Event</a></li>
+                        <li><a href="#soa%3AComposition">soa:Composition</a></li>
                         
-                        <li><a href="#%23InformationType">InformationType</a></li>
+                        <li><a href="#soa%3AEffect">soa:Effect</a></li>
                         
-                        <li><a href="#%23ServiceComposition">ServiceComposition</a></li>
+                        <li><a href="#soa%3AElement">Element</a></li>
                         
-                        <li><a href="#%23Effect">Effect</a></li>
+                        <li><a href="#soa%3AEvent">soa:Event</a></li>
                         
-                        <li><a href="#%23Task">Task</a></li>
+                        <li><a href="#soa%3AHumanActor">soa:HumanActor</a></li>
                         
-                        <li><a href="#%23System">System</a></li>
+                        <li><a href="#soa%3AInformationType">soa:InformationType</a></li>
                         
-                        <li><a href="#%23Service">Service</a></li>
+                        <li><a href="#soa%3APolicy">soa:Policy</a></li>
                         
-                        <li><a href="#%23Policy">Policy</a></li>
+                        <li><a href="#soa%3AProcess">soa:Process</a></li>
                         
-                        <li><a href="#%23HumanActor">HumanActor</a></li>
+                        <li><a href="#soa%3AService">soa:Service</a></li>
                         
-                        <li><a href="#%23Composition">Composition</a></li>
+                        <li><a href="#soa%3AServiceComposition">soa:ServiceComposition</a></li>
                         
-                        <li><a href="#%23ServiceInterface">ServiceInterface</a></li>
+                        <li><a href="#soa%3AServiceContract">soa:ServiceContract</a></li>
                         
-                        <li><a href="#%23Element">Element</a></li>
+                        <li><a href="#soa%3AServiceInterface">soa:ServiceInterface</a></li>
                         
-                        <li><a href="#%23ServiceContract">ServiceContract</a></li>
+                        <li><a href="#soa%3ASystem">System</a></li>
                         
-                        <li><a href="#%23Process">Process</a></li>
+                        <li><a href="#soa%3ATask">soa:Task</a></li>
                         
-                        <li><a href="#%23isPartyTo">isPartyTo</a></li>
+                        <li><a href="#soa%3AappliesTo">soa:appliesTo</a></li>
+                        
+                        <li><a href="#soa%3AcompositionPattern">soa:compositionPattern</a></li>
+                        
+                        <li><a href="#soa%3Aconstraints">soa:constraints</a></li>
+                        
+                        <li><a href="#soa%3Adoes">soa:does</a></li>
+                        
+                        <li><a href="#soa%3AdoneBy">soa:doneBy</a></li>
+                        
+                        <li><a href="#soa%3AgeneratedBy">soa:generatedBy</a></li>
+                        
+                        <li><a href="#soa%3Agenerates">soa:generates</a></li>
+                        
+                        <li><a href="#soa%3AhasContract">soa:hasContract</a></li>
+                        
+                        <li><a href="#soa%3AhasInput">soa:hasInput</a></li>
+                        
+                        <li><a href="#soa%3AhasInterface">soa:hasInterface</a></li>
+                        
+                        <li><a href="#soa%3AhasOutput">soa:hasOutput</a></li>
+                        
+                        <li><a href="#soa%3AinteractionAspect">soa:interactionAspect</a></li>
+                        
+                        <li><a href="#soa%3AinvolvesParty">soa:involvesParty</a></li>
+                        
+                        <li><a href="#soa%3AisContractFor">soa:isContractFor</a></li>
+                        
+                        <li><a href="#soa%3AisInputAt">soa:isInputAt</a></li>
+                        
+                        <li><a href="#soa%3AisInterfaceOf">soa:isInterfaceOf</a></li>
+                        
+                        <li><a href="#soa%3AisOutputAt">soa:isOutputAt</a></li>
+                        
+                        <li><a href="#soa%3AisPartyTo">soa:isPartyTo</a></li>
+                        
+                        <li><a href="#soa%3AisSetBy">soa:isSetBy</a></li>
+                        
+                        <li><a href="#soa%3AisSpecifiedBy">soa:isSpecifiedBy</a></li>
+                        
+                        <li><a href="#soa%3AisSubjectTo">soa:isSubjectTo</a></li>
+                        
+                        <li><a href="#soa%3AlegalAspect">soa:legalAspect</a></li>
+                        
+                        <li><a href="#soa%3AorchestratedBy">soa:orchestratedBy</a></li>
+                        
+                        <li><a href="#soa%3Aorchestrates">soa:orchestrates</a></li>
+                        
+                        <li><a href="#soa%3AperformedBy">soa:performedBy</a></li>
+                        
+                        <li><a href="#soa%3Aperforms">soa:performs</a></li>
+                        
+                        <li><a href="#soa%3ArepresentedBy">soa:representedBy</a></li>
+                        
+                        <li><a href="#soa%3Arepresents">soa:represents</a></li>
+                        
+                        <li><a href="#soa%3ArespondedToBy">soa:respondedToBy</a></li>
+                        
+                        <li><a href="#soa%3ArespondsTo">soa:respondsTo</a></li>
+                        
+                        <li><a href="#soa%3AsetsPolicy">soa:setsPolicy</a></li>
+                        
+                        <li><a href="#soa%3Aspecifies">soa:specifies</a></li>
+                        
+                        <li><a href="#soa%3AusedBy">used by</a></li>
+                        
+                        <li><a href="#soa%3Auses">uses</a></li>
+                        
+                        <li><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></li>
                         </ul></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">about<span>&nbsp;</span><a href="http://schema.org/about">[?]</a></th>
@@ -300,403 +1376,2202 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-            </div>
+
+        </div>
         <hr/><br/><br/><hr/><br/><br/>
-            <div>
-                <h3> Event</h3>
-                
-                
-                
-                
-        <div id="#Event">
+           <div>
+            <h3> soa:Composition</h3>
+            
+            
+            
+            
+        <div id="soa:Composition">
             
             <table class="table metadata table-striped" >
                 <tbody><tr>
             <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#Event</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>Event</span></td>
+            <td style='text-align:left'><span>soa:Composition</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>rdfs:Class</span></td>
+            <td style='text-align:left'><ul>
+                        <li><span>rdfs:Class</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rdfs:subClassOf</th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#soa%3ASystem">System</a></li>
+                        
+                        <li><a href="#_%3Ab17">_:b17</a></li>
+                        
+                        <li><a href="#_%3Ab2">_:b2</a></li>
+                        
+                        <li><a href="#_%3Ab3">_:b3</a></li>
+                        
+                        <li><a href="#_%3Ab4">_:b4</a></li>
+                        </ul></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
             <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rdfs:subClassOf</th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#soa%3AProcess">soa:Process</a></li>
+                        
+                        <li><a href="#soa%3AServiceComposition">soa:ServiceComposition</a></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#soa%3AcompositionPattern">soa:compositionPattern</a></li>
+                        
+                        <li><a href="#soa%3AorchestratedBy">soa:orchestratedBy</a></li>
+                        </ul></td>
             </tr></tbody>
             </table>
         </div>
-            </div>
+
+        </div>
         <hr/><br/><br/>
-            <div>
-                <h3> InformationType</h3>
-                
-                
-                
-                
-        <div id="#InformationType">
+           <div>
+            <h3> soa:Effect</h3>
+            
+            
+            
+            
+        <div id="soa:Effect">
             
             <table class="table metadata table-striped" >
                 <tbody><tr>
             <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#InformationType</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>InformationType</span></td>
+            <td style='text-align:left'><span>soa:Effect</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>rdfs:Class</span></td>
+            <td style='text-align:left'><ul>
+                        <li><span>rdfs:Class</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rdfs:subClassOf</th>
+            <td style='text-align:left'><a href="#_%3Ab16">_:b16</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
             <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3Aspecifies">soa:specifies</a></td>
             </tr></tbody>
             </table>
         </div>
-            </div>
+
+        </div>
         <hr/><br/><br/>
-            <div>
-                <h3> ServiceComposition</h3>
-                
-                
-                
-                
-        <div id="#ServiceComposition">
+           <div>
+            <h3> Element</h3>
+            
+            
+            
+            
+        <div id="soa:Element">
             
             <table class="table metadata table-striped" >
                 <tbody><tr>
             <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#ServiceComposition</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>ServiceComposition</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>rdfs:Class</span></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
-            <td style='text-align:left'><a href="#./">./</a></td>
-            </tr></tbody>
-            </table>
-        </div>
-            </div>
-        <hr/><br/><br/>
-            <div>
-                <h3> Effect</h3>
-                
-                
-                
-                
-        <div id="#Effect">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#Effect</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>Effect</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>rdfs:Class</span></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
-            <td style='text-align:left'><a href="#./">./</a></td>
-            </tr></tbody>
-            </table>
-        </div>
-            </div>
-        <hr/><br/><br/>
-            <div>
-                <h3> Task</h3>
-                
-                
-                
-                
-        <div id="#Task">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#Task</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>Task</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>rdfs:Class</span></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
-            <td style='text-align:left'><a href="#./">./</a></td>
-            </tr></tbody>
-            </table>
-        </div>
-            </div>
-        <hr/><br/><br/>
-            <div>
-                <h3> System</h3>
-                
-                
-                
-                
-        <div id="#System">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#System</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>System</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>rdfs:Class</span></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
-            <td style='text-align:left'><a href="#./">./</a></td>
-            </tr></tbody>
-            </table>
-        </div>
-            </div>
-        <hr/><br/><br/>
-            <div>
-                <h3> Service</h3>
-                
-                
-                
-                
-        <div id="#Service">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#Service</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>Service</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>rdfs:Class</span></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
-            <td style='text-align:left'><a href="#./">./</a></td>
-            </tr></tbody>
-            </table>
-        </div>
-            </div>
-        <hr/><br/><br/>
-            <div>
-                <h3> Policy</h3>
-                
-                
-                
-                
-        <div id="#Policy">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#Policy</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>Policy</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>rdfs:Class</span></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
-            <td style='text-align:left'><a href="#./">./</a></td>
-            </tr></tbody>
-            </table>
-        </div>
-            </div>
-        <hr/><br/><br/>
-            <div>
-                <h3> HumanActor</h3>
-                
-                
-                
-                
-        <div id="#HumanActor">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#HumanActor</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>HumanActor</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>rdfs:Class</span></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
-            <td style='text-align:left'><a href="#./">./</a></td>
-            </tr></tbody>
-            </table>
-        </div>
-            </div>
-        <hr/><br/><br/>
-            <div>
-                <h3> Composition</h3>
-                
-                
-                
-                
-        <div id="#Composition">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#Composition</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>Composition</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>rdfs:Class</span></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
-            <td style='text-align:left'><a href="#./">./</a></td>
-            </tr></tbody>
-            </table>
-        </div>
-            </div>
-        <hr/><br/><br/>
-            <div>
-                <h3> ServiceInterface</h3>
-                
-                
-                
-                
-        <div id="#ServiceInterface">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#ServiceInterface</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>ServiceInterface</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>rdfs:Class</span></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
-            <td style='text-align:left'><a href="#./">./</a></td>
-            </tr></tbody>
-            </table>
-        </div>
-            </div>
-        <hr/><br/><br/>
-            <div>
-                <h3> Element</h3>
-                
-                
-                
-                
-        <div id="#Element">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#Element</span></td>
+            <td style='text-align:left'><span>soa:Element</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
             <td style='text-align:left'><span>Element</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>rdfs:Class</span></td>
+            <td style='text-align:left'><ul>
+                        <li><span>rdfs:Class</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
+            <td style='text-align:left'><span>An element is an opaque entity that is indivisible at a given level of abstraction. The element has a clearly defined boundary.</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">subjectOf<span>&nbsp;</span><a href="http://schema.org/subjectOf">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//www.opengroup.org/soa/source-book/ontologyv2/p2.htm">Service-Oriented Architecture Ontology Version 2.0 – System and Element</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rdfs:subClassOf</th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#_%3Ab8">_:b8</a></li>
+                        
+                        <li><a href="#_%3Ab9">_:b9</a></li>
+                        </ul></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
             <td style='text-align:left'><a href="#./">./</a></td>
-            </tr></tbody>
-            </table>
-        </div>
-            </div>
-        <hr/><br/><br/>
-            <div>
-                <h3> ServiceContract</h3>
-                
-                
-                
-                
-        <div id="#ServiceContract">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#ServiceContract</span></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>ServiceContract</span></td>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>rdfs:Class</span></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
-            <td style='text-align:left'><a href="#./">./</a></td>
-            </tr></tbody>
-            </table>
-        </div>
-            </div>
-        <hr/><br/><br/>
-            <div>
-                <h3> Process</h3>
-                
-                
-                
-                
-        <div id="#Process">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#Process</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>Process</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>rdfs:Class</span></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
-            <td style='text-align:left'><a href="#./">./</a></td>
-            </tr></tbody>
-            </table>
-        </div>
-            </div>
-        <hr/><br/><br/>
-            <div>
-                <h3> isPartyTo</h3>
-                
-                
-                
-                
-        <div id="#isPartyTo">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#isPartyTo</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>isPartyTo</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>rdf:Property</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
-            <td style='text-align:left'></td>
+            <th style="text-align:left;" class="prop">rdfs:subClassOf</th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#soa%3AHumanActor">soa:HumanActor</a></li>
+                        
+                        <li><a href="#soa%3AService">soa:Service</a></li>
+                        
+                        <li><a href="#soa%3ASystem">System</a></li>
+                        
+                        <li><a href="#soa%3ATask">soa:Task</a></li>
+                        </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
-            <td style='text-align:left'><a href="#%23HumanActor-1">HumanActor-1</a></td>
+            <td style='text-align:left'><ul>
+                        <li><a href="#soa%3Agenerates">soa:generates</a></li>
+                        
+                        <li><a href="#soa%3Aperforms">soa:performs</a></li>
+                        
+                        <li><a href="#soa%3Arepresents">soa:represents</a></li>
+                        
+                        <li><a href="#soa%3ArespondsTo">soa:respondsTo</a></li>
+                        
+                        <li><a href="#soa%3AusedBy">used by</a></li>
+                        
+                        <li><a href="#soa%3Auses">uses</a></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#soa%3AorchestratedBy">soa:orchestratedBy</a></li>
+                        
+                        <li><a href="#soa%3Arepresents">soa:represents</a></li>
+                        
+                        <li><a href="#soa%3AusedBy">used by</a></li>
+                        
+                        <li><a href="#soa%3Auses">uses</a></li>
+                        </ul></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:Event</h3>
+            
+            
+            
+            
+        <div id="soa:Event">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:Event</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdfs:Class</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        </ul></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#soa%3Agenerates">soa:generates</a></li>
+                        
+                        <li><a href="#soa%3ArespondsTo">soa:respondsTo</a></li>
+                        </ul></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:HumanActor</h3>
+            
+            
+            
+            
+        <div id="soa:HumanActor">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:HumanActor</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdfs:Class</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rdfs:subClassOf</th>
+            <td style='text-align:left'><a href="#soa%3AElement">Element</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AdoneBy">soa:doneBy</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#soa%3AisPartyTo">soa:isPartyTo</a></li>
+                        
+                        <li><a href="#soa%3AsetsPolicy">soa:setsPolicy</a></li>
+                        </ul></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:InformationType</h3>
+            
+            
+            
+            
+        <div id="soa:InformationType">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:InformationType</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdfs:Class</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        </ul></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#soa%3AhasInput">soa:hasInput</a></li>
+                        
+                        <li><a href="#soa%3AhasOutput">soa:hasOutput</a></li>
+                        </ul></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:Policy</h3>
+            
+            
+            
+            
+        <div id="soa:Policy">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:Policy</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdfs:Class</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        </ul></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AappliesTo">soa:appliesTo</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AsetsPolicy">soa:setsPolicy</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:Process</h3>
+            
+            
+            
+            
+        <div id="soa:Process">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:Process</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdfs:Class</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rdfs:subClassOf</th>
+            <td style='text-align:left'><a href="#soa%3AComposition">soa:Composition</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:Service</h3>
+            
+            
+            
+            
+        <div id="soa:Service">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:Service</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdfs:Class</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rdfs:subClassOf</th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#soa%3AElement">Element</a></li>
+                        
+                        <li><a href="#_%3Ab7">_:b7</a></li>
+                        </ul></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AhasInterface">soa:hasInterface</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#soa%3AisContractFor">soa:isContractFor</a></li>
+                        
+                        <li><a href="#soa%3Aperforms">soa:performs</a></li>
+                        </ul></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:ServiceComposition</h3>
+            
+            
+            
+            
+        <div id="soa:ServiceComposition">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:ServiceComposition</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdfs:Class</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rdfs:subClassOf</th>
+            <td style='text-align:left'><a href="#soa%3AComposition">soa:Composition</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:ServiceContract</h3>
+            
+            
+            
+            
+        <div id="soa:ServiceContract">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:ServiceContract</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdfs:Class</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rdfs:subClassOf</th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#_%3Ab0">_:b0</a></li>
+                        
+                        <li><a href="#_%3Ab1">_:b1</a></li>
+                        
+                        <li><a href="#_%3Ab10">_:b10</a></li>
+                        
+                        <li><a href="#_%3Ab11">_:b11</a></li>
+                        
+                        <li><a href="#_%3Ab12">_:b12</a></li>
+                        
+                        <li><a href="#_%3Ab13">_:b13</a></li>
+                        </ul></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#soa%3AinteractionAspect">soa:interactionAspect</a></li>
+                        
+                        <li><a href="#soa%3AisContractFor">soa:isContractFor</a></li>
+                        
+                        <li><a href="#soa%3AlegalAspect">soa:legalAspect</a></li>
+                        
+                        <li><a href="#soa%3Aspecifies">soa:specifies</a></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AisPartyTo">soa:isPartyTo</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:ServiceInterface</h3>
+            
+            
+            
+            
+        <div id="soa:ServiceInterface">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:ServiceInterface</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdfs:Class</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rdfs:subClassOf</th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#_%3Ab14">_:b14</a></li>
+                        
+                        <li><a href="#_%3Ab15">_:b15</a></li>
+                        </ul></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#soa%3Aconstraints">soa:constraints</a></li>
+                        
+                        <li><a href="#soa%3AhasInput">soa:hasInput</a></li>
+                        
+                        <li><a href="#soa%3AhasOutput">soa:hasOutput</a></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AhasInterface">soa:hasInterface</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> System</h3>
+            
+            
+            
+            
+        <div id="soa:System">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:System</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>System</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdfs:Class</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
+            <td style='text-align:left'><span>A system is an organized collection of other things. Specifically things in a system collection are instances of Element, each such instance being used by the system.</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">termCode<span>&nbsp;</span><a href="http://schema.org/termCode">[?]</a></th>
+            <td style='text-align:left'><span>System</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">subjectOf<span>&nbsp;</span><a href="http://schema.org/subjectOf">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//www.opengroup.org/soa/source-book/ontologyv2/p2.htm">Service-Oriented Architecture Ontology Version 2.0 – System and Element</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rdfs:subClassOf</th>
+            <td style='text-align:left'><a href="#soa%3AElement">Element</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rdfs:subClassOf</th>
+            <td style='text-align:left'><a href="#soa%3AComposition">soa:Composition</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:Task</h3>
+            
+            
+            
+            
+        <div id="soa:Task">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:Task</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdfs:Class</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rdfs:subClassOf</th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#soa%3AElement">Element</a></li>
+                        
+                        <li><a href="#_%3Ab5">_:b5</a></li>
+                        
+                        <li><a href="#_%3Ab6">_:b6</a></li>
+                        </ul></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AdoneBy">soa:doneBy</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:appliesTo</h3>
+            
+            
+            
+            
+        <div id="soa:appliesTo">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:appliesTo</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:ObjectProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3APolicy">soa:Policy</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AisSubjectTo">soa:isSubjectTo</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:compositionPattern</h3>
+            
+            
+            
+            
+        <div id="soa:compositionPattern">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:compositionPattern</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:DatatypeProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AComposition">soa:Composition</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">owl:onProperty</th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#_%3Ab17">_:b17</a></li>
+                        
+                        <li><a href="#_%3Ab2">_:b2</a></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:constraints</h3>
+            
+            
+            
+            
+        <div id="soa:constraints">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:constraints</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:DatatypeProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AServiceInterface">soa:ServiceInterface</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">owl:onProperty</th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#_%3Ab14">_:b14</a></li>
+                        
+                        <li><a href="#_%3Ab15">_:b15</a></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:does</h3>
+            
+            
+            
+            
+        <div id="soa:does">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:does</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:ObjectProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AdoneBy">soa:doneBy</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:doneBy</h3>
+            
+            
+            
+            
+        <div id="soa:doneBy">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:doneBy</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:ObjectProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3ATask">soa:Task</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AHumanActor">soa:HumanActor</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">owl:onProperty</th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#_%3Ab5">_:b5</a></li>
+                        
+                        <li><a href="#_%3Ab6">_:b6</a></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3Adoes">soa:does</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:generatedBy</h3>
+            
+            
+            
+            
+        <div id="soa:generatedBy">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:generatedBy</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:ObjectProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3Agenerates">soa:generates</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:generates</h3>
+            
+            
+            
+            
+        <div id="soa:generates">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:generates</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:ObjectProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AElement">Element</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AEvent">soa:Event</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AgeneratedBy">soa:generatedBy</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:hasContract</h3>
+            
+            
+            
+            
+        <div id="soa:hasContract">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:hasContract</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:ObjectProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AisContractFor">soa:isContractFor</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:hasInput</h3>
+            
+            
+            
+            
+        <div id="soa:hasInput">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:hasInput</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:ObjectProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AServiceInterface">soa:ServiceInterface</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AInformationType">soa:InformationType</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AisInputAt">soa:isInputAt</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:hasInterface</h3>
+            
+            
+            
+            
+        <div id="soa:hasInterface">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:hasInterface</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:ObjectProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AService">soa:Service</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AServiceInterface">soa:ServiceInterface</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">owl:onProperty</th>
+            <td style='text-align:left'><a href="#_%3Ab7">_:b7</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AisInterfaceOf">soa:isInterfaceOf</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:hasOutput</h3>
+            
+            
+            
+            
+        <div id="soa:hasOutput">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:hasOutput</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:ObjectProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AServiceInterface">soa:ServiceInterface</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AInformationType">soa:InformationType</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AisOutputAt">soa:isOutputAt</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:interactionAspect</h3>
+            
+            
+            
+            
+        <div id="soa:interactionAspect">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:interactionAspect</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:DatatypeProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AServiceContract">soa:ServiceContract</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">owl:onProperty</th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#_%3Ab10">_:b10</a></li>
+                        
+                        <li><a href="#_%3Ab11">_:b11</a></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:involvesParty</h3>
+            
+            
+            
+            
+        <div id="soa:involvesParty">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:involvesParty</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:ObjectProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AisPartyTo">soa:isPartyTo</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:isContractFor</h3>
+            
+            
+            
+            
+        <div id="soa:isContractFor">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:isContractFor</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:ObjectProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AServiceContract">soa:ServiceContract</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AService">soa:Service</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">owl:onProperty</th>
+            <td style='text-align:left'><a href="#_%3Ab12">_:b12</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AhasContract">soa:hasContract</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:isInputAt</h3>
+            
+            
+            
+            
+        <div id="soa:isInputAt">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:isInputAt</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:ObjectProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AhasInput">soa:hasInput</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:isInterfaceOf</h3>
+            
+            
+            
+            
+        <div id="soa:isInterfaceOf">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:isInterfaceOf</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:ObjectProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AhasInterface">soa:hasInterface</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:isOutputAt</h3>
+            
+            
+            
+            
+        <div id="soa:isOutputAt">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:isOutputAt</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:ObjectProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AhasOutput">soa:hasOutput</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:isPartyTo</h3>
+            
+            
+            
+            
+        <div id="soa:isPartyTo">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:isPartyTo</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:ObjectProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AHumanActor">soa:HumanActor</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AServiceContract">soa:ServiceContract</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AinvolvesParty">soa:involvesParty</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:isSetBy</h3>
+            
+            
+            
+            
+        <div id="soa:isSetBy">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:isSetBy</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:ObjectProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AsetsPolicy">soa:setsPolicy</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:isSpecifiedBy</h3>
+            
+            
+            
+            
+        <div id="soa:isSpecifiedBy">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:isSpecifiedBy</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:ObjectProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3Aspecifies">soa:specifies</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">owl:onProperty</th>
+            <td style='text-align:left'><a href="#_%3Ab16">_:b16</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:isSubjectTo</h3>
+            
+            
+            
+            
+        <div id="soa:isSubjectTo">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:isSubjectTo</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:ObjectProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AappliesTo">soa:appliesTo</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:legalAspect</h3>
+            
+            
+            
+            
+        <div id="soa:legalAspect">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:legalAspect</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:DatatypeProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AServiceContract">soa:ServiceContract</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">owl:onProperty</th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#_%3Ab0">_:b0</a></li>
+                        
+                        <li><a href="#_%3Ab1">_:b1</a></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:orchestratedBy</h3>
+            
+            
+            
+            
+        <div id="soa:orchestratedBy">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:orchestratedBy</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:ObjectProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AComposition">soa:Composition</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AElement">Element</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">owl:onProperty</th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#_%3Ab3">_:b3</a></li>
+                        
+                        <li><a href="#_%3Ab4">_:b4</a></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3Aorchestrates">soa:orchestrates</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:orchestrates</h3>
+            
+            
+            
+            
+        <div id="soa:orchestrates">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:orchestrates</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:ObjectProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AorchestratedBy">soa:orchestratedBy</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">owl:onProperty</th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#_%3Ab8">_:b8</a></li>
+                        
+                        <li><a href="#_%3Ab9">_:b9</a></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:performedBy</h3>
+            
+            
+            
+            
+        <div id="soa:performedBy">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:performedBy</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:ObjectProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3Aperforms">soa:performs</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:performs</h3>
+            
+            
+            
+            
+        <div id="soa:performs">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:performs</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:ObjectProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AElement">Element</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AService">soa:Service</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AperformedBy">soa:performedBy</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:representedBy</h3>
+            
+            
+            
+            
+        <div id="soa:representedBy">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:representedBy</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:ObjectProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3Arepresents">soa:represents</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:represents</h3>
+            
+            
+            
+            
+        <div id="soa:represents">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:represents</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:ObjectProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AElement">Element</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AElement">Element</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3ArepresentedBy">soa:representedBy</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:respondedToBy</h3>
+            
+            
+            
+            
+        <div id="soa:respondedToBy">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:respondedToBy</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:ObjectProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3ArespondsTo">soa:respondsTo</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:respondsTo</h3>
+            
+            
+            
+            
+        <div id="soa:respondsTo">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:respondsTo</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:ObjectProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AElement">Element</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AEvent">soa:Event</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3ArespondedToBy">soa:respondedToBy</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:setsPolicy</h3>
+            
+            
+            
+            
+        <div id="soa:setsPolicy">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:setsPolicy</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:ObjectProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AHumanActor">soa:HumanActor</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3APolicy">soa:Policy</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AisSetBy">soa:isSetBy</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> soa:specifies</h3>
+            
+            
+            
+            
+        <div id="soa:specifies">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:specifies</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:ObjectProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AServiceContract">soa:ServiceContract</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AEffect">soa:Effect</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">owl:onProperty</th>
+            <td style='text-align:left'><a href="#_%3Ab13">_:b13</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AisSpecifiedBy">soa:isSpecifiedBy</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> used by</h3>
+            
+            
+            
+            
+        <div id="soa:usedBy">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:usedBy</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>used by</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:ObjectProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
+            <td style='text-align:left'><span>Inverse of property soa:uses</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">termCode<span>&nbsp;</span><a href="http://schema.org/termCode">[?]</a></th>
+            <td style='text-align:left'><span>usedBy</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">subjectOf<span>&nbsp;</span><a href="http://schema.org/subjectOf">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//www.opengroup.org/soa/source-book/ontologyv2/p2.htm">Service-Oriented Architecture Ontology Version 2.0 – System and Element</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3Auses">uses</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AElement">Element</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AElement">Element</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3> uses</h3>
+            
+            
+            
+            
+        <div id="soa:uses">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>soa:uses</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>uses</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>rdf:Property</span></li>
+                        
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>owL:ObjectProperty</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
+            <td style='text-align:left'><span>Elements may use other elements in various ways. In general, the notion of some element using another element is applied by practitioners for all of models, executables, and physical objects. What differs from domain to domain is the way in which such use is perceived. <p>An element uses another element if it interacts with it in some fashion. Interacts here is interpreted very broadly ranging through, for example, an element simply being a member of (used by) some system (see later for a formal definition of the System class), an element interacting with (using) another element (such as a service; see later for a formal definition of the Service class) in an ad hoc fashion, or even a strongly coupled dependency in a composition (see Section 5.2 for a formal definition of the Composition class). The uses property, and its inverse usedBy, capture the abstract notion of an element using another. These properties capture not just transient relations. Instantiations of the property can include “uses at this instant”, “has used”, and “may in future use”. <p>For the purposes of this ontology we have chosen not to attempt to enumerate and formally define the multitude of different possible semantics of a uses relationship. We leave the semantic interpretations to a particular sub-domain, application, or even design approach.</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">termCode<span>&nbsp;</span><a href="http://schema.org/termCode">[?]</a></th>
+            <td style='text-align:left'><span>uses</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">subjectOf<span>&nbsp;</span><a href="http://schema.org/subjectOf">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//www.opengroup.org/soa/source-book/ontologyv2/p2.htm">Service-Oriented Architecture Ontology Version 2.0 – System and Element</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AElement">Element</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AElement">Element</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">./</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.semanticweb.org/ontologies/2010/01/core-soa.owl">Service-Oriented Architecture Ontology (OWL)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inverseOf<span>&nbsp;</span><a href="http://schema.org/inverseOf">[?]</a></th>
+            <td style='text-align:left'><a href="#soa%3AusedBy">used by</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3><a href="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl">Go to: </a> Service-Oriented Architecture Ontology (OWL)</h3>
+            
+            
+            
+            
+        <div id="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><a href="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl">http://www.semanticweb.org/ontologies/2010/01/core-soa.owl</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>Service-Oriented Architecture Ontology (OWL)</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>DefinedTermSet</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">license<span>&nbsp;</span><a href="http://schema.org/license">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//www.opengroup.org/soa/source-book/ontologyv2/p15.htm">Service-Oriented Architecture Ontology Version 2.0 – Legal</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">version<span>&nbsp;</span><a href="http://schema.org/version">[?]</a></th>
+            <td style='text-align:left'><span>2.0</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">subjectOf<span>&nbsp;</span><a href="http://schema.org/subjectOf">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//www.opengroup.org//soa/source-book/ontologyv2/">Service-Oriented Architecture Ontology Version 2.0</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">contentUrl<span>&nbsp;</span><a href="http://schema.org/contentUrl">[?]</a></th>
+            <td style='text-align:left'><a href="https://www.opengroup.org/soa/ontology/20140404/soa.owl">https://www.opengroup.org/soa/ontology/20140404/soa.owl</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasDefinedTerm<span>&nbsp;</span><a href="http://schema.org/hasDefinedTerm">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#soa%3AComposition">soa:Composition</a></li>
+                        
+                        <li><a href="#soa%3AEffect">soa:Effect</a></li>
+                        
+                        <li><a href="#soa%3AElement">Element</a></li>
+                        
+                        <li><a href="#soa%3AEvent">soa:Event</a></li>
+                        
+                        <li><a href="#soa%3AHumanActor">soa:HumanActor</a></li>
+                        
+                        <li><a href="#soa%3AInformationType">soa:InformationType</a></li>
+                        
+                        <li><a href="#soa%3APolicy">soa:Policy</a></li>
+                        
+                        <li><a href="#soa%3AProcess">soa:Process</a></li>
+                        
+                        <li><a href="#soa%3AService">soa:Service</a></li>
+                        
+                        <li><a href="#soa%3AServiceComposition">soa:ServiceComposition</a></li>
+                        
+                        <li><a href="#soa%3AServiceContract">soa:ServiceContract</a></li>
+                        
+                        <li><a href="#soa%3AServiceInterface">soa:ServiceInterface</a></li>
+                        
+                        <li><a href="#soa%3ASystem">System</a></li>
+                        
+                        <li><a href="#soa%3ATask">soa:Task</a></li>
+                        
+                        <li><a href="#soa%3AappliesTo">soa:appliesTo</a></li>
+                        
+                        <li><a href="#soa%3AcompositionPattern">soa:compositionPattern</a></li>
+                        
+                        <li><a href="#soa%3Aconstraints">soa:constraints</a></li>
+                        
+                        <li><a href="#soa%3Adoes">soa:does</a></li>
+                        
+                        <li><a href="#soa%3AdoneBy">soa:doneBy</a></li>
+                        
+                        <li><a href="#soa%3AgeneratedBy">soa:generatedBy</a></li>
+                        
+                        <li><a href="#soa%3Agenerates">soa:generates</a></li>
+                        
+                        <li><a href="#soa%3AhasContract">soa:hasContract</a></li>
+                        
+                        <li><a href="#soa%3AhasInput">soa:hasInput</a></li>
+                        
+                        <li><a href="#soa%3AhasInterface">soa:hasInterface</a></li>
+                        
+                        <li><a href="#soa%3AhasOutput">soa:hasOutput</a></li>
+                        
+                        <li><a href="#soa%3AinteractionAspect">soa:interactionAspect</a></li>
+                        
+                        <li><a href="#soa%3AinvolvesParty">soa:involvesParty</a></li>
+                        
+                        <li><a href="#soa%3AisContractFor">soa:isContractFor</a></li>
+                        
+                        <li><a href="#soa%3AisInputAt">soa:isInputAt</a></li>
+                        
+                        <li><a href="#soa%3AisInterfaceOf">soa:isInterfaceOf</a></li>
+                        
+                        <li><a href="#soa%3AisOutputAt">soa:isOutputAt</a></li>
+                        
+                        <li><a href="#soa%3AisPartyTo">soa:isPartyTo</a></li>
+                        
+                        <li><a href="#soa%3AisSetBy">soa:isSetBy</a></li>
+                        
+                        <li><a href="#soa%3AisSpecifiedBy">soa:isSpecifiedBy</a></li>
+                        
+                        <li><a href="#soa%3AisSubjectTo">soa:isSubjectTo</a></li>
+                        
+                        <li><a href="#soa%3AlegalAspect">soa:legalAspect</a></li>
+                        
+                        <li><a href="#soa%3AorchestratedBy">soa:orchestratedBy</a></li>
+                        
+                        <li><a href="#soa%3Aorchestrates">soa:orchestrates</a></li>
+                        
+                        <li><a href="#soa%3AperformedBy">soa:performedBy</a></li>
+                        
+                        <li><a href="#soa%3Aperforms">soa:performs</a></li>
+                        
+                        <li><a href="#soa%3ArepresentedBy">soa:representedBy</a></li>
+                        
+                        <li><a href="#soa%3Arepresents">soa:represents</a></li>
+                        
+                        <li><a href="#soa%3ArespondedToBy">soa:respondedToBy</a></li>
+                        
+                        <li><a href="#soa%3ArespondsTo">soa:respondsTo</a></li>
+                        
+                        <li><a href="#soa%3AsetsPolicy">soa:setsPolicy</a></li>
+                        
+                        <li><a href="#soa%3Aspecifies">soa:specifies</a></li>
+                        
+                        <li><a href="#soa%3AusedBy">used by</a></li>
+                        
+                        <li><a href="#soa%3Auses">uses</a></li>
+                        </ul></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
             <td style='text-align:left'><a href="#./">./</a></td>
             </tr></tbody>
             </table>
         </div>
-            </div>
+
+        </div>
         <hr/><br/><br/></div>
 </div>
 
