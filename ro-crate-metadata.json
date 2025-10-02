@@ -1,0 +1,197 @@
+{
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    {
+      "subPropertyOf": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+      "owl": "http://www.w3.org/2002/07/owl#",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "soa": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/profiles/schema/1.0"
+        }
+      ],
+      "mentions": [
+        {
+          "@id": "#Event"
+        },
+        {
+          "@id": "#InformationType"
+        },
+        {
+          "@id": "#ServiceComposition"
+        },
+        {
+          "@id": "#Effect"
+        },
+        {
+          "@id": "#Task"
+        },
+        {
+          "@id": "#System"
+        },
+        {
+          "@id": "#Service"
+        },
+        {
+          "@id": "#Policy"
+        },
+        {
+          "@id": "#HumanActor"
+        },
+        {
+          "@id": "#Composition"
+        },
+        {
+          "@id": "#ServiceInterface"
+        },
+        {
+          "@id": "#ServiceInterface"
+        },
+        {
+          "@id": "#Element"
+        },
+        {
+          "@id": "#ServiceContract"
+        },
+        {
+          "@id": "#Process"
+        },
+        {
+          "@id": "#isPartyTo"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "identifier": "ro-crate-metadata.json",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "#Event",
+      "@type": "rdfs:Class",
+      "name": [
+        "Event"
+      ]
+    },
+    {
+      "@id": "#InformationType",
+      "@type": "rdfs:Class",
+      "name": [
+        "InformationType"
+      ]
+    },
+    {
+      "@id": "#ServiceComposition",
+      "@type": "rdfs:Class",
+      "name": [
+        "ServiceComposition"
+      ]
+    },
+    {
+      "@id": "#Effect",
+      "@type": "rdfs:Class",
+      "name": [
+        "Effect"
+      ]
+    },
+    {
+      "@id": "#Task",
+      "@type": "rdfs:Class",
+      "name": [
+        "Task"
+      ]
+    },
+    {
+      "@id": "#System",
+      "@type": "rdfs:Class",
+      "name": [
+        "System"
+      ]
+    },
+    {
+      "@id": "#Service",
+      "@type": "rdfs:Class",
+      "name": [
+        "Service"
+      ]
+    },
+    {
+      "@id": "#Policy",
+      "@type": "rdfs:Class",
+      "name": [
+        "Policy"
+      ]
+    },
+    {
+      "@id": "#HumanActor",
+      "@type": "rdfs:Class",
+      "name": [
+        "HumanActor"
+      ]
+    },
+    {
+      "@id": "#Composition",
+      "@type": "rdfs:Class",
+      "name": [
+        "Composition"
+      ]
+    },
+    {
+      "@id": "#ServiceInterface",
+      "@type": "rdfs:Class",
+      "name": [
+        "ServiceInterface"
+      ]
+    },
+    {
+      "@id": "#Element",
+      "@type": "rdfs:Class",
+      "name": [
+        "Element"
+      ]
+    },
+    {
+      "@id": "#ServiceContract",
+      "@type": "rdfs:Class",
+      "name": [
+        "ServiceContract"
+      ]
+    },
+    {
+      "@id": "#Process",
+      "@type": "rdfs:Class",
+      "name": [
+        "Process"
+      ]
+    },
+    {
+      "@id": "#isPartyTo",
+      "@type": "rdf:Property",
+      "name": [
+        "isPartyTo"
+      ],
+      "rangeIncludes": [],
+      "domainIncludes": [
+        {
+          "@id": "#HumanActor"
+        }
+      ]
+    }
+
+
+
+
+    
+
+  ]
+}
