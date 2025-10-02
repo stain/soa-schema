@@ -1348,6 +1348,153 @@
         "@id": "https://www.opengroup.org//soa/source-book/ontologyv2/"
       },
       "name": "Service-Oriented Architecture Ontology Version 2.0 – Event"
+    },
+    {
+      "@id": "#CarWashBusiness",
+      "@type": [
+        "HumanActor",
+        "System",
+        "LocalBusiness"
+      ],
+      "name": "Car wash business (example)",
+      "uses": [
+        {
+          "@id": "#CarWash",
+          "@type": "HumanActor",
+          "name": "Car wash",
+          "represents": {
+            "@id": "#CarWashSystem",
+            "@type": "System",
+            "name": "Car wash system",
+            "uses": [
+              {
+                "@id": "#PreWashGuy",
+                "@type": "Element",
+                "name": "Pre wash guy",
+                "representedBy": {
+                  "@id": "#John",
+                  "@type": [
+                    "HumanActor",
+                    "Person"
+                  ],
+                  "name": "John"
+                }
+              },
+              {
+                "@id": "#WashOperator",
+                "@type": "Element",
+                "name": "Wash operator",
+                "representedBy": {
+                  "@id": "#Jack",
+                  "@type": [
+                    "HumanActor",
+                    "Person"
+                  ],
+                  "name": "Jack"
+                }
+              },
+              {
+                "@id": "#WashManager",
+                "@type": "Element",
+                "name": "Wash manager",
+                "representedBy": {
+                  "@id": "#Jack"
+                }  
+              }              
+            ],
+            "performs": [
+              {
+                "@id": "#BasicWash",
+                "@type": "Service",
+                "name": "Basic wash",
+                "hasInterface": {
+                  "@id": "#WashingMachineInterface",
+                  "@type": "ServiceInterface",
+                  "name": "Washing machine interface",
+                  "hasInput": {
+                    "@id": "#TypeOfWash",
+                    "@type": ["InformationType", "Enumeration"],
+                    "name": "Type of wash"
+                  }
+                },
+                "representedBy": {
+                  "@id": "#WashManager"
+                },
+                "hasContract": {
+                  "@id": "#BasicWashContract",
+                  "@type": "ServiceContract",
+                  "name": "Basic wash contract",
+                  "interactionAspect": "Car returned clean after 2 hours",
+                  "legalAspect": "$10 per car clean every Tuesday", 
+                  "involvesParty": [
+                    {
+                      "@id": "#CarWashBusiness"
+                    },
+                    {
+                      "@id": "#Judy",
+                      "@type": ["HumanActor", "Person"],
+                      "name": "Judy",
+                      "uses": {
+                        "@id": "#WashManager"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "@id": "#GoldWash",
+                "@type": "Service",
+                "name": "Gold wash",
+                "representedBy": {
+                  "@id": "#WashManager"
+                },
+                "hasInterface": {
+                  "@id": "#WashingMachineInterface"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@id": "#Administration",
+          "@type": "HumanActor",
+          "name": "Administration",
+          "represents": {
+            "@id": "#AdministrativeSystem",
+            "@type": "System",
+            "name": "Administrative system"
+          },
+          "uses": [
+            {
+              "@id": "#Owner",
+              "@type": "Element",
+              "name": "Owner",
+              "representedBy": {
+                "@id": "#Joe",
+                "@type": [
+                  "HumanActor",
+                  "Person"
+                ],
+                "name": "Joe"
+              }
+            },
+            {
+              "@id": "#Secretary",
+              "@type": "Element",
+              "name": "Wash operator",
+              "representedBy": {
+                "@id": "#Mary",
+                "@type": [
+                  "HumanActor",
+                  "Person"
+                ],
+                "name": "Mary"
+              }
+            }
+          ]
+        }        
+      ]
     }
+
   ]
 }
