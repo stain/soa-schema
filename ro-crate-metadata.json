@@ -275,7 +275,7 @@
     {
       "@id": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl",
       "@type": "DefinedTermSet",
-      "path": "http://www.opengroup.org/soaontology/20140404/soa.owl",
+      "path": "http://www.opengroup.org/soa/ontology/20140404/soa.owl",
       "hasDefinedTerm": [
         {
           "@id": "soa:Composition"
@@ -1267,7 +1267,7 @@
       "inverseOf": {
         "@id": "soa:respondsTo"
       },
-      "name": "respnded to by",
+      "name": "responded to by",
       "rangeIncludes": {
         "@id": "soa:Element"
       },
