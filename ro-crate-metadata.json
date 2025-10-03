@@ -425,7 +425,7 @@
       "license": {
         "@id": "http://www.opengroup.org/soa/source-book/ontologyv2/p15.htm"
       },
-      "name": "Service-Oriented Architecture Ontology (OWL)",
+      "name": "Service-Oriented Architecture Ontology",
       "description": "OWL ontology with definitions of SOA Ontology. The terms referenced from hasDefinedTerm represents equivalent Schema.org-like-Schema definitions without using OWL constraints.",
       "subjectOf": {
         "@id": "https://www.opengroup.org/soa/source-book/ontologyv2/"
@@ -1023,6 +1023,8 @@
         "rdf:Property",
         "DefinedTerm"
       ],
+      "name": "is party to",
+      "termCode": "isPartyTo",
       "description": "In addition to the rules and regulations that intrinsically apply to any interaction with a service (the interaction aspect of service contracts captured in the interactionAspect datatype property) there may be additional legal agreements that apply to certain human actors and their use of services. The involvesParty property, and its inverse isPartyTo, capture the abstract notion of a service contract specifying legal obligations between human actors in the context of using the one or more services for which the service contract is a contract.",
       "domainIncludes": {
         "@id": "soa:HumanActor"
