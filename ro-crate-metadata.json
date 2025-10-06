@@ -275,7 +275,7 @@
     {
       "@id": "http://www.semanticweb.org/ontologies/2010/01/core-soa.owl",
       "@type": "DefinedTermSet",
-      "path": "http://www.opengroup.org/soa/ontology/20140404/soa.owl",
+      "path": "https://www.opengroup.org/soa/ontology/20140404/soa.owl",
       "hasDefinedTerm": [
         {
           "@id": "soa:Composition"
@@ -1735,6 +1735,7 @@
     {
       "@id": "#PushWashButton",
       "@type": "Task",
+      "name": "Push wash button",
       "doneBy": {
         "@id": "#Jack"
       }
